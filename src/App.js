@@ -11,8 +11,8 @@ import ResidencePermits from './pages/PersidencePermits/ResidencePermits';
 import Footer from './layouts/Footer/Footer';
 import Header from './layouts/Header/Header';
 import ForeingHealthInsurance from './pages/ForeignHealthInsurance/ForeingHealthInsurance';
-import FixedButton from './component/FixedButton';
 import WhatsappButton from './component/WhatsappButton';
+import HealthInsuranceButton from './component/HealthInsuranceButton';
 
 function App() {
   return (
@@ -70,7 +70,7 @@ function App() {
           </Container>
         </Box>
 
-         <FixedButton />
+         <HealthInsuranceButton />
             <WhatsappButton />
       </ThemeProvider>
     </LocalizationProvider>

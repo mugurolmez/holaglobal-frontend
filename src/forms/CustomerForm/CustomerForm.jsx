@@ -38,9 +38,9 @@ const CustomerForm = () => {
         onSubmit={onSubmit}
       >
         {formik => (
-          <Box sx={{ margin: '10px', alignItems: 'center', height: '100%' }}>
+          <Box sx={mainAppStyles.customerFormBox}>
             <Form>
-              <Typography sx={mainAppStyles.formTitle}>{formTitle}</Typography>
+              <Typography sx={mainAppStyles.customerFormTitle}>{formTitle}</Typography>
               {useMainCustomerFormItems.map(item => (
                 <FormikControl
                   key={item.id}
@@ -54,7 +54,7 @@ const CustomerForm = () => {
     
              
               <Button sx={mainAppStyles.button} type="submit" disabled={!formik.isValid}>
-                Submit
+                Formu Gönder
               </Button>
             </Form>
           </Box>

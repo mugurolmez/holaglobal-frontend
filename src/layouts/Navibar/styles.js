@@ -27,7 +27,7 @@ export const navibarStyles = {
     label: {
         color: '#FFFFFF',
         fontWeight: 'bold',
-        fontSize: { xs: '10px', sm: '12px', md: '16px', lg: '22px', xl: '22px' },
+        fontSize: { xs: '10px', sm: '12px', md: 'px', lg: '22px', xl: '22px' },
     },
     logoBox: {
         maxWidth: '100px',

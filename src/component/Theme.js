@@ -11,11 +11,7 @@ export const theme = createTheme({
             main: '#673ab7',
         },
     },
-
-  
-
     components: {
-       
         MuiInputLabel: {
             styleOverrides: {
                 root: {
@@ -75,6 +71,7 @@ export const theme = createTheme({
                     fontWeight: 'bold',
                     textAlign: 'center',
                     width: '100%',
+                    height: '10vw',
                     marginTop: '2%',
                     marginBottom: '2%',
                     flex: '1',
@@ -83,7 +80,7 @@ export const theme = createTheme({
         },
     },
 
-      
+
     typography: {
         h6: {
             color: 'white',

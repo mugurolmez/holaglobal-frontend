@@ -7,18 +7,13 @@ import { Box, Typography } from '@mui/material'
 const ShortTermResidencePermit = () => {
   return (
     <Box
-    display="flex"
-    justifyContent="center"
-    alignItems="flex-start"
-    flexDirection={{ xs: 'column', md: 'row' }}
-    sx={{ minHeight: '70vh' }}
-    textAlign={'left'}
+    sx={mainAppStyles.pageBox}
   >
-    <Box sx={mainAppStyles.formBox} width={{ xs: '100%', md: '40%'}} padding={2}>
+    <Box sx={mainAppStyles.pageFormBox}>
       <CustomerForm />
     </Box>
 
-    <Box width={{ xs: '100%', md: '60%' }} padding={2}>
+    <Box sx={mainAppStyles.pageTextBox}>
     {mainShortTermResidencePermitItems.map((item) => (
           <Typography key={item.id} variant={item.variant}>
             {item.text}
