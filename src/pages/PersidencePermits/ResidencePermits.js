@@ -16,7 +16,6 @@ import ShortTermResidencePermit from './residencePermitPages/ShortTermResidenceP
 import LongTermResidencePermit from './residencePermitPages/LongTermResidencePermit/LongTermResidencePermit';
 import EdicationResidencePermit from './residencePermitPages/EdicationResidencePermit/EdicationResidencePermit';
 
-
 const pages = {
   FamilyResidencePermit,
   EdicationResidencePermit,
@@ -25,8 +24,6 @@ const pages = {
   ShortTermResidencePermit,
   LongTermResidencePermit
 };
-
-
 
 const Tab = styled(BaseTab)`
   font-family: 'IBM Plex Sans', sans-serif;
@@ -54,8 +51,8 @@ const Tab = styled(BaseTab)`
   }
 
   &.${tabClasses.selected} {
-    background-color:white;
-    color:black;
+    background-color: white;
+    color: black;
   }
 
   &.${buttonClasses.disabled} {
@@ -72,47 +69,46 @@ const TabPanel = styled(BaseTabPanel)`
 
 const TabsList = styled(BaseTabsList)(
   ({ theme }) => `
-  min-width: 400px;
-  background-color:#e94e1b;
+  min-width: 100%;
+  background-color: #e94e1b;
   border-radius: 12px;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  align-content: space-between;
   box-shadow: 0px 4px 6px ${
     theme.palette.mode === 'dark' ? 'rgba(0,0,0, 0.4)' : 'rgba(0,0,0, 0.2)'
   };
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
   `,
 );
 
-
 const ResidencePermits = () => {
-  
-
   return (
     <Box>
-    <Tabs defaultValue={0}>
-      <TabsList>
-        {mainTabItems.map((item) => (
-          <Tab key={item.id} value={item.id}>
-            {item.text}
-          </Tab>
-        ))}
-      </TabsList>
-      {mainTabItems.map((item) => {
-        const PageComponent = pages[item.page];
-        return (
-            <Grid key={item.id}> 
-          <TabPanel key={item.id} value={item.id}>
-            {PageComponent && <PageComponent />}
-          </TabPanel>
-         </Grid>
-
-        );
-      })}
-    </Tabs>
-  </Box>
+      <Tabs defaultValue={0}>
+        <TabsList>
+          {mainTabItems.map((item) => (
+            <Tab key={item.id} value={item.id}>
+              {item.text}
+            </Tab>
+          ))}
+        </TabsList>
+        {mainTabItems.map((item) => {
+          const PageComponent = pages[item.page];
+          return (
+            <Grid key={item.id}>
+              <TabPanel key={item.id} value={item.id}>
+                {PageComponent && <PageComponent />}
+              </TabPanel>
+            </Grid>
+          );
+        })}
+      </Tabs>
+    </Box>
   );
 };
 

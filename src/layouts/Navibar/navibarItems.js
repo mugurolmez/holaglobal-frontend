@@ -1,13 +1,14 @@
 
 export const mainNavbarItems = [
     {
-        id: 1,
+        id: 0,
         label: 'Anasayfa',
         text: 'AnaSayfa',
-        route:'home'
+        route:'home',
+      
     },
     {
-        id: 2,
+        id: 1,
         label: 'İKAMET İZİNLERİ',
         text: 'İKAMET İZİNLERİ',
         route:'residence-permits'
@@ -15,13 +16,13 @@ export const mainNavbarItems = [
     }, 
    
     {
-        id: 3,
+        id: 2,
         label: 'YABANCI SAĞLIK SİGORTASI',
         text: 'YABANCI SAĞLIK SİGORTASI',
         route:'foreing-health-insurance'
     },
    {
-        id: 4,
+        id: 3,
         label: 'İLETİŞİM',
         text: 'İLETİŞİM',
         route:'/contact'
