@@ -30,7 +30,7 @@ function App() {
           
           }}
         >
-          <Container maxWidth='xl'>       
+          <Container sx={{maxWidth:'xl'}}>       
           <Box 
             sx={{
               display: 'flex',
