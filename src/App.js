@@ -35,7 +35,7 @@ function App() {
 
           }}
         >
-          <Container maxWidth='xl'>
+          <Container maxWidth='xl'sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }} >
             <Box
               sx={{
                 display: 'flex',
