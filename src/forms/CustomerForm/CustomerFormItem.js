@@ -1,68 +1,79 @@
 import * as Yup from 'yup';
 import { countries } from './CountriesItems';
+import { useTranslation } from 'react-i18next';
 
 
+export const useMainCustomerFormItems = () => {
+  
+  const { t } = useTranslation();
 
-export const useMainCustomerFormItems=[
+  const residencePermitTypeOptions=[
+    {id:0, value:t('mainTabItems.familyResidencePermit')},
+    {id:1, value:t('mainTabItems.educationResidencePermit')},
+    {id:2, value:t('mainTabItems.touristResidencePermit')},
+    {id:3, value:t('mainTabItems.humanitarianResidencePermit')},
+    {id:4, value:t('mainTabItems.shortTermResidencePermit')},
+    {id:5, value:t('mainTabItems.longTermResidencePermit')},
+  ]
 
+  return [
     {
       id: 0,
       control: 'muiInput',
       type: 'name',
-      label: 'Name',
+      label: t('name'),
       name: 'name',
-      validationSchema: Yup.string().required('Name is required')
+      validationSchema: Yup.string().required(t('validation.nameRequired'))
     },
     {
       id: 1,
       control: 'muiInput',
       type: 'lastname',
-      label: 'Last Name',
+      label: t('lastName'),
       name: 'lastname',
-      validationSchema: Yup.string().required('Last name is required')
+      validationSchema: Yup.string().required(t('validation.lastNameRequired'))
     },
     {
       id: 2,
       control: 'datePicker',
       type: 'dateOfBirth',
-      label: 'Date of Birth',
+      label: t('dateOfBirth'),
       name: 'dateOfBirth',
-   
-      validationSchema: Yup.date().typeError('geçersiz tarih formatı').required('Date of Birth is required')
+      validationSchema: Yup.date().typeError(t('validation.dateOfBirthInvalid')).required(t('validation.dateOfBirthRequired'))
     },
     {
       id: 3,
       control: 'muiInput',
       type: 'passportNumber',
-      label: 'Passport Number',
+      label: t('passportNumber'),
       name: 'passportNumber',
-      validationSchema: Yup.string().required('Passport Number is required')
+      validationSchema: Yup.string().required(t('validation.passportNumberRequired'))
     },
     {
       id: 4,
-      control: 'muiInput',
+      control: 'muiSelectField',
       type: 'typeOfResidencePermit',
-      label: 'Type of Residence Permit',
+      label: t('typeOfResidencePermit'),
       name: 'typeOfResidencePermit',
-      validationSchema: Yup.string().required('Type of Residence Permit is required')
+      options: residencePermitTypeOptions,
+      validationSchema: Yup.string().required(t('validation.typeOfResidencePermitRequired'))
     },
     {
       id: 5,
       control: 'muiInput',
       type: 'phoneNumber',
-      label: 'Phone Number',
+      label: t('phoneNumber'),
       name: 'phoneNumber',
-      validationSchema: Yup.string().required('Phone Number is required')
-    }, 
-     {
+      validationSchema: Yup.string().required(t('validation.phoneNumberRequired'))
+    },
+    {
       id: 6,
       control: 'muiSelectField',
       type: 'nationality',
-      label: 'nationality',
+      label: t('nationality'),
       name: 'nationality',
-      options:countries,
-      validationSchema: Yup.string().required('Phone Number is required')
-    },
- 
-  
-]
+      options: countries,
+      validationSchema: Yup.string().required(t('validation.nationalityRequired'))
+    }
+  ];
+};

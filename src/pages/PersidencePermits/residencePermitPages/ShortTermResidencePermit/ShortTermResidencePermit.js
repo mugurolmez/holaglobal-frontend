@@ -3,8 +3,11 @@ import CustomerForm from '../../../../forms/CustomerForm/CustomerForm'
 import { mainAppStyles } from '../../../../appStyles'
 import { mainShortTermResidencePermitItems } from './ShortTermResidencePermitItems'
 import { Box, Typography } from '@mui/material'
+import { useTranslation } from 'react-i18next';
 
 const ShortTermResidencePermit = () => {
+  const { t } = useTranslation();
+  const items = mainShortTermResidencePermitItems(t);
   return (
     <Box
     sx={mainAppStyles.pageBox}
@@ -14,7 +17,7 @@ const ShortTermResidencePermit = () => {
     </Box>
 
     <Box sx={mainAppStyles.pageTextBox}>
-    {mainShortTermResidencePermitItems.map((item) => (
+    {items.map((item) => (
           <Typography key={item.id} variant={item.variant}>
             {item.text}
           </Typography>

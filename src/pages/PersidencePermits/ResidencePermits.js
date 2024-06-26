@@ -5,7 +5,6 @@ import { TabsList as BaseTabsList } from '@mui/base/TabsList';
 import { TabPanel as BaseTabPanel } from '@mui/base/TabPanel';
 import { buttonClasses } from '@mui/base/Button';
 import { Tab as BaseTab, tabClasses } from '@mui/base/Tab';
-
 import { Box, Grid } from '@mui/material';
 import { mainTabItems } from './ResidencePermitItems';
 import { orange } from '@mui/material/colors';
@@ -15,6 +14,7 @@ import HumanitarianResidencePermit from './residencePermitPages/HumanitarianResi
 import ShortTermResidencePermit from './residencePermitPages/ShortTermResidencePermit/ShortTermResidencePermit';
 import LongTermResidencePermit from './residencePermitPages/LongTermResidencePermit/LongTermResidencePermit';
 import EdicationResidencePermit from './residencePermitPages/EdicationResidencePermit/EdicationResidencePermit';
+import { useTranslation } from 'react-i18next';
 
 const pages = {
   FamilyResidencePermit,
@@ -87,17 +87,19 @@ const TabsList = styled(BaseTabsList)(
 );
 
 const ResidencePermits = () => {
+  const { t } = useTranslation();
+  const items = mainTabItems(t);
   return (
     <Box>
       <Tabs defaultValue={0}>
         <TabsList>
-          {mainTabItems.map((item) => (
+          {items.map((item) => (
             <Tab key={item.id} value={item.id}>
               {item.text}
             </Tab>
           ))}
         </TabsList>
-        {mainTabItems.map((item) => {
+        {items.map((item) => {
           const PageComponent = pages[item.page];
           return (
             <Grid key={item.id}>

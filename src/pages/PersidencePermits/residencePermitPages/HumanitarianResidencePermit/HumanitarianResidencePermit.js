@@ -3,8 +3,10 @@ import React from 'react'
 import CustomerForm from '../../../../forms/CustomerForm/CustomerForm'
 import { mainAppStyles } from '../../../../appStyles'
 import { mainHumanitarianResidencePermitItems } from './HumanitarianResidencePermitItems'
-
+import { useTranslation } from 'react-i18next';
 const HumanitarianResidencePermit = () => {
+  const { t } = useTranslation();
+  const items = mainHumanitarianResidencePermitItems(t);
   return (
     <Box
    sx={mainAppStyles.pageBox}
@@ -14,7 +16,7 @@ const HumanitarianResidencePermit = () => {
     </Box>
 
     <Box sx={mainAppStyles.pageTextBox}>
-    {mainHumanitarianResidencePermitItems.map((item) => (
+    {items.map((item) => (
           <Typography key={item.id} variant={item.variant}>
             {item.text}
           </Typography>

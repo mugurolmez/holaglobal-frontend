@@ -1,0 +1,274 @@
+{
+  "formTitleInsurance": "Sigorta Başvuru Formu",
+  "formTitleQuick": "Hızlı Başvuru Formu",
+  "name": "Ad",
+  "lastName": "Soyad",
+  "dateOfBirth": "Doğum Tarihi",
+  "passportNumber": "Pasaport Numarası",
+  "typeOfResidencePermit": "Oturma İzni Türü",
+  "phoneNumber": "Telefon Numarası",
+  "nationality": "Milliyet",
+  "submitButton": "Formu Gönder",
+  "validation": {
+    "nameRequired": "Ad gereklidir",
+    "lastNameRequired": "Soyad gereklidir",
+    "dateOfBirthRequired": "Doğum Tarihi gereklidir",
+    "dateOfBirthInvalid": "Geçersiz tarih formatı",
+    "passportNumberRequired": "Pasaport Numarası gereklidir",
+    "typeOfResidencePermitRequired": "Oturma İzni Türü gereklidir",
+    "phoneNumberRequired": "Telefon Numarası gereklidir",
+    "nationalityRequired": "Milliyet gereklidir"
+  },
+  "mainHomeTextItems": {
+    "title": "H O L A !",
+    "welcomeMessage": "İkamet İzinleri Merkezi'ne Hoş Geldiniz!",
+    "description": "HOLA !, ikamet izinleri alım sürecini kolaylaştıran ve hızlandıran lider bir platform olarak, Türkiye'de yaşayan yabancılar için güvenilir çözümler sunar. Bizler, ikamet izinlerinin alım sürecini sizin için daha hızlı ve kolay hale getirmek için buradayız.",
+    "servicesTitle": "Hizmetlerimiz:",
+    "serviceDetails": "İkamet İzni Başvuruları: Türkiye'de ikamet izni alım sürecini başlatmak veya devam ettirmek için gereken tüm adımları sizin için yönetiyoruz. Profesyonel danışmanlarımız, başvurunuzun sorunsuz bir şekilde tamamlanmasını sağlar. Danışmanlık Hizmetleri: İkamet izni süreci hakkında bilgi almak veya özel danışmanlık hizmetleri için bizimle iletişime geçebilirsiniz. Uzman ekibimiz, sizin için en uygun çözümü sunmak için burada.",
+    "updatesInfo": "Güncel Bilgilendirme: İkamet izni sürecindeki son güncellemeleri ve değişiklikleri takip etmek için bizi takip edin. Yeni yönetmelikler, prosedürler ve haberler hakkında bilgi sahibi olmak için sitemizi düzenli olarak ziyaret edin.",
+    "whyHolaTitle": "Neden Hola Global?",
+    "whyHolaDetails": "Deneyimli Ekibimiz: HOLA !'da, alanında uzman danışmanlarımızla ikamet izni sürecini en iyi şekilde yönetiyoruz. Hızlı ve Güvenilir Hizmet: Başvurularınızı hızlı bir şekilde işleme alır ve sonuçlandırırız, böylece sizin için zaman kazanırız. Müşteri Memnuniyeti: Müşteri odaklı yaklaşımımızla, ihtiyaçlarınıza uygun çözümler sunarız ve memnuniyetinizi en üst düzeyde tutarız.",
+    "finalMessage": "Siz de Türkiye'de ikamet izni alım sürecinde yanınızda güçlü bir ortağa ihtiyaç duyuyorsanız, bizimle iletişime geçmekten çekinmeyin. İkamet izinlerinizin en sorunsuz ve verimli şekilde tamamlanması için HOLA ! yanınızda!"
+  },
+  "mainNavbarItems": {
+    "homeLabel": "Anasayfa",
+    "homeText": "AnaSayfa",
+    "residencePermitsLabel": "İKAMET İZİNLERİ",
+    "residencePermitsText": "İKAMET İZİNLERİ",
+    "healthInsuranceLabel": "YABANCI SAĞLIK SİGORTASI",
+    "healthInsuranceText": "YABANCI SAĞLIK SİGORTASI",
+    "contactLabel": "İLETİŞİM",
+    "contactText": "İLETİŞİM"
+  },
+  "mainTabItems": {
+    "familyResidencePermit": "Aile İkamet İzni",
+    "educationResidencePermit": "Öğrenci İkamet İzni",
+    "touristResidencePermit": "Turistik İkamet İzni",
+    "humanitarianResidencePermit": "İnsani İkamet İzni",
+    "shortTermResidencePermit": "Kısa Dönem İkamet",
+    "longTermResidencePermit": "Uzun Dönem İkamet"
+  },
+  "familyResidencePermit": {
+    "title": "Aile İkamet İzni",
+    "info1": "Türkiye Cumhuriyeti’ne gelerek ikamet izin belgesi alan yabancı uyruklu vatandaşların, birinci dereceden yakınları da aynı şekilde ikamet belgesi alabilirler.",
+    "whoCanApply": "Aile ikamet belgesi kimler için düzenlenebilir?",
+    "spouse": "Yabancı uyruklu eş’e.",
+    "minorChild": "Eşinin ya da kendinin erişkin olmayan yabancı uyruklu çocuğuna.",
+    "dependentChild": "Eşinin ya da kendinin bağımlı çocuğuna.",
+    "info2": "*Öğrenci ikamet izin belgesi, öğrencinin hiç bir yakınına ikamet izin belgesi hakkı vermez.",
+    "multipleSpouses": "Aile ikamet izini için başvuru talebinde bulunan yabancı uyruklu vatandaşın birden fazla eşi olması durumunda, eşlerden ancak birine ikamet izni başvurusunda bulunabilir.",
+    "educationRestriction": "Aile ikamet izin belgesi ile, öğrenci ikamet belgesi olmadan yabancı uyruklu çocuk ancak ilk ve orta öğretim kurumlarında on sekiz yaşına kadar eğitim alabilmektedir.",
+    "shortTermPermit": "Aile ikamet izini olan yabancı uyruklu vatandaşlar hangi durumlarda kısa dönem ikamet izini için başvuruda bulunabilirler?",
+    "divorce": "Türk vatandaşı ile evli yabancı uyruklu birinin boşanma sürecinde ve en az üç yıl aile ikameti ile Türkiye’de kalması şartıyla. (Aile içi şiddet sebebiyle mağduriyetini mahkeme kararı ile kanıtladıysa üç yıl aile ikametiyle Türkiye’de kalmış olma zorunluluğu aranmaz).",
+    "supporterDeath": "Destekleyicinin vefatı durumunda ona bağlı, aile ikameti bulunan yabancı uyruklu vatandaşlar.",
+    "threeYearsStay": "En az üç yıl aile ikamet izni ile ülkemizde kalmış, on sekiz yaşını doldurmuş yabancı uyruklu vatandaşlar.",
+    "requirements": "Aile ikamet izni için aranan koşullar nelerdir?",
+    "healthInsurance": "Destekleyicinin aile bireylerinin hepsini kapsayan geçerli sağlık sigortası, aile bireylerinin her biri için Türkiye Cumhuriyeti Anayasasıyla belirlenmiş asgari ücretin en az üçte biri kadar gelir miktarı, beş yıl içerisinde aile düzenine karşı bir suç işlemediğini belirten adli sicil kaydı ve en az bir yıl Türkiye Cumhuriyeti'nde ikamet edip adres kayıt sisteminde kaydının bulunması.",
+    "purposeStatement": "Aile ikamet izni için başvuran yabancı uyruklu vatandaşların Türkiye Cumhuriyeti'nde kalış amaçlarını açıklayan belgelerin beyan edilmesi, başvuruda bulunan destekleyici ile birlikte yaşama niyetini ya da yaşadığını ispatlaması ve eşlerin yasal yaş sınırını doldurması (on sekiz yaş ve üzeri) gereklidir.",
+    "notApprovedReasons": "Aile ikamet izin başvuruları neden onaylanmaz?",
+    "notMetConditions": "Başvuru sırasında istenen koşulların oluşturulmaması ve ya ortadan kalkması durumunda.",
+    "misuse": "Verilen izinin verilme amacı dışında kullanılması durumunda.",
+    "entryBan": "Hakkında sınır dışı ya da ülkeye giriş yasağının bulunması durumunda."
+  },
+  "edicationResidencePermit": {
+    "title": "Öğrenci İkamet İzni",
+    "info1": "Türkiye Cumhuriyeti’ne gelerek ikamet izin belgesi alan yabancı uyruklu vatandaşların, öğrenci ikamet tezkeresi için gerekli belgeleri ilgili İl Göç İdaresi'ne beyan etmeleri gerekmektedir.",
+    "whoCanApply": "Öğrenci ikamet izni için başvuruda bulunabilecek yabancı uyruklu vatandaşlar kimlerdir?",
+    "undergraduate": "Aile ikamet izin tezkeresi bulunmayan, ilk ve orta öğrenim seviyesinde eğitim alacak yabancı uyruklu vatandaşlar.",
+    "graduate": "TUS, DUS ve doktora eğitimi alacak yabancı uyruklu öğrenciler.",
+    "info2": "* Öğrenci ikamet izni bulunan yabancı uyruklu vatandaşın yalnızca eş ve çocuk/çocuklarına aile ikamet izni verilebilir. Geri kalan aile bireylerine hiçbir ayrıcalık sağlanmaz.",
+    "permitDuration": "Öğrenci ikamet izni hangi sürelerde düzenlenir?",
+    "shortTerm": "Eğitim süresi bir yıldan kısa olan yabancı uyruklu vatandaşlara, eğitim süresi boyunca ikamet izni verilir.",
+    "longTerm": "Eğitim süresi bir yıldan uzun olan yabancı uyruklu vatandaşlara eğitim süreci boyunca ikamet izni verilir ve süreçler bir yıl aralıklarla uzatılabilir.",
+    "requirements": "Öğrenci ikamet izni için sağlanması gereken koşullar nelerdir?",
+    "noLegalBarriers": "Türkiye Cumhuriyeti’nde ikamet etmeyi engelleyen yasal bir durumun bulunmaması.",
+    "educationDocuments": "Alınacak eğitimi gösteren belgelerin hazırlanması ve beyan edilmesi.",
+    "addressDeclaration": "Türkiye Cumhuriyeti’nde ikamet edilecek adres bilgisinin beyan edilmesi.",
+    "healthInsurance": "Öğrenci ikamet izni için sağlık sigortası zorunlu mudur?",
+    "insuranceRequirement": "Sosyal Sigortalar ve Genel Sağlık Sigortası Kanunu gereğince, kayıt tarihinden itibaren üç ay içinde genel sağlık sigortalısı olmak için başvuruda bulunmayan yabancı uyruklu öğrencilere başka bir sağlık sigortası sağlanmaz. Üç aylık süre sonunda genel sağlık sigortalısı olmayanlar, özel sağlık sigortası yaptırmaları gerekebilir."
+  },
+  "mainHumanitarianResidencePermitItems": {
+    "title": "İnsani İkamet İzni",
+    "info1": "İkamet ettiği ülkedeki iç karışıklık veya savaştan kaçarak legal yollarla Türkiye Cumhuriyetine giriş yapan yabancı uyruklu vatandaşlara veya Türkiye Cumhuriyetinde kalması zorunlu olan yabancı uyruklu vatandaşlara en fazla bir yıla kadar kısa süreli ikamet izni verilebilir.",
+    "whoCanApply": "İnsani ikamet belgesi kimler için düzenlenebilir?",
+    "spouse": "Yabancı uyruklu eş’e.",
+    "minorChild": "Eşinin ya da kendinin erişkin olmayan yabancı uyruklu çocuğuna.",
+    "dependentChild": "Eşinin ya da kendinin bağımlı çocuğuna.",
+    "reasons": {
+      "title": "Gerekçeler",
+      "item1": "Çocuğun yüksek faydası söz konusu olduğunda.",
+      "item2": "Haklarında sınırdışı veya Türkiye Cumhuriyetine giriş yasağı yaptırımı kararı alındığı halde, yabancı uyruklu vatandaşların Türkiye Cumhuriyetinden çıkış yapmaları uygun görülmediğinde.",
+      "item3": "Müracat sahibinin ilk iltica ülkesi ya da güvenli diğer bir ülkeye geri yollanması işlemlerinin devamı sürecinde.",
+      "item4": "Acil sebeplerden ötürü veya ülke çıkarlarının korunması ile kamu düzeni ve kamu güvenliği amacıyla Türkiye Cumhuriyeti’ne girişine ve ikamet etmesine izin verilmesi gereken yabancı uyruklu vatandaşlara.",
+      "item5": "Olağanüstü durumlarda.",
+      "item6": "İnsani ikamet tezkeresi ve geçici süreli koruma altına alınmış olanlara uzun dönem ikamet hakkı tanınmamaktadır. Ayrıca insani ikamet tezkeresi alan yabancı uyruklu vatandaşlar, tezkere’nin veriliş tarihinden itibaren en geç yirmi iş günü içerisinde adres kayıt sistemine kayıt yaptırmak zorundadırlar."
+    }
+  },
+  "mainLongTermResidencePermitItems": {
+    "title": "Uzun Dönem İkamet İzni Nedir?",
+    "info1": "Uzun dönem ikamet izni için Türkiye Cumhuriyetinde kesintisiz olarak en az 8 (sekiz) yıl geçirmiş olmak yeterlidir. Başvuruda bulunabilmek için gerekli şartları sağlayan yabancı uyruklu vatandaşların yaşadıkları il ve ya ilçedeki yetkili makamlardan uzun dönem ikamet izni alabilmeleri mümkündür.",
+    "conditions": {
+      "title": "Uzun dönem ikamet izni için gerekli koşullar:",
+      "item1": "8 (sekiz) yıl boyunca aralıksız olarak Türkiye Cumhuriyetinde kalmış olmak.",
+      "item2": "Ülkede bulunduğu son 3 (üç) yıl içerisinde sosyal yardım almamış olmak.",
+      "item3": "Şahsın kendisinin ve varsa ailesinin geçimini sağlayabilecek gelir kaynağına sahip olmak.",
+      "item4": "Kamu ya da özel sağlık kuruluşlarından alınmış geçerli sağlık sigortalısı olmak.",
+      "item5": "Kamu güvenliği ve düzeni bakımından sorun teşkil etmeyeceğinden emin olmak."
+    },
+    "calculation": {
+      "title": "8 (Sekiz) yıllık süreç hesaplama:",
+      "description": "Koşullarda belirtildiği üzere sekiz yıllık sürecin hesaplanmasında, öğrenci ikameti ile geçirilen zamanın yarısı geri kalan tüm izinlerin tam zamanlı olarak alınmasıyla birlikte sekiz yıllık sürecin tamamlanması gereklidir."
+    },
+    "cancellation": {
+      "title": "Uzun dönem ikamet izninin iptal/red durumu:",
+      "reason1": "Sağlık, eğitim ya da vatandaşı olduğu ülkedeki zorunlu kamu hizmeti dışındaki bir amaçla kesintisiz olarak 1 (bir) yıldan fazla Türkiye Cumhuriyeti sınırlarının ötesinde bulunması sonucunda.",
+      "reason2": "Yabancı uyruklu vatandaşın kamu sağlığı, düzeni ve güvenliği açısından tehdit oluşturabilecek durumda olması",
+      "reapplication": "Reddedilen uzun dönem ikamet izni durumunda tekrar başvuru yapılır mı ?",
+      "reapplicationDetails": "Uzun dönem ikamet izni başvurusu iptal/red alan yabancı uyruklu vatandaşlar yurtdışında bulunan Türkiye Cumhuriyeti konsoloslukları ve yurtiçinde ise yabancı uyruklu vatandaşın bulunduğu ildeki yetkili kurumlarca usulüne uygun başvuru yapılabilmektedir. Tekrar edilen müracatlarda kesintisiz 8 (sekiz) yıl bulunma şartı aranmamaktadır."
+    }
+  },
+  "mainTouristResidencePermitItems": {
+    "title": "Turistik İkamet İzni",
+    "info1": "Turistik gezi amaçlı Türkiye Cumhuriyetinde kalmayı hedefleyen yabancı uyruklu vatandaşların, kaldıkları süre zarfında nerede, ne zaman ve ne kadar bir süre kalacaklarını belgeleyen belgeleri yetkili makamlara teslim etmeleri istenebilir.",
+    "info2": "2018 yılı itibariyle, turistik ikamet için adli sicil belgesi ve Türkiye Cumhuriyetinde kalacakları süre boyunca geçimlerini nasıl sağlayacaklarını gösteren belgeler yetkili makamlara sunulması gerekmektedir."
+  },
+  "mainShortTermResidencePermitItems": {
+    "title": "Kısa Dönem İkamet İzni",
+    "info1": "Türkiye Cumhuriyetine vize ya da vize muafiyeti belgesi ile giriş yapmış olan yabancı uyruklu vatandaşlar, başvuruda bulunmaları ve gerekli koşulları sağladıkları takdirde 1 (bir) yıla kadar kısa dönem ikamet izni alabilmektedirler. Kısa dönem ikamet izni alabilmeleri için vize ya da vize muafiyeti belgesi ile Göç ve İltica Bürolarına başvuru talebinde bulunarak randevu oluşturmaları ve randevu süresine kadar istenilen evrakların eksiksiz olarak hazırlanması gerekmektedir.",
+    "whoCanApply": "Kısa dönem ikamet izni kimler için düzenlenebilir?",
+    "tourism": "Turistik amaçla Türkiye Cumhuriyetine ziyaret gerçekleştirecek yabancı uyruklu vatandaşlara.",
+    "business": "İş görüşmesi, anlaşma, konferans, fuar veya eğitim gibi faaliyetler için Türkiye Cumhuriyetinde bulunması gereken yabancı uyruklu vatandaşlara.",
+    "sportingEvents": "Spor faaliyetleri için Türkiye Cumhuriyetine katılacak yabancı uyruklu vatandaşlara.",
+    "artist": "Sanatsal veya kültürel etkinliklere katılacak yabancı uyruklu vatandaşlara.",
+    "education": "Kısa dönem eğitimler için Türkiye Cumhuriyetine giriş yapacak yabancı uyruklu vatandaşlara.",
+    "info2": "Kısa dönem ikamet izni alacak olan yabancı uyruklu vatandaşların; pasaport, vize veya vize muafiyeti belgesi, ikamet izni başvuru formu, Türkiye Cumhuriyeti sınırları içerisinde konaklayacakları yeri gösterir belge, adli sicil belgesi ve sağlık sigortası belgesi gibi belgeleri ibraz etmeleri gerekmektedir.",
+    "validityPeriod": "Kısa dönem ikamet izni kaç gün süreyle geçerlidir?",
+    "singleEntry": "Vize ya da vize muafiyeti belgesi ile giriş yapmış olan yabancı uyruklu vatandaşlar, Türkiye Cumhuriyetinde en fazla 90 gün süreyle ikamet izni alabilirler.",
+    "multipleEntry": "Birden fazla giriş izni olan vize veya vize muafiyeti belgesi ile giriş yapmış olan yabancı uyruklu vatandaşlar, Türkiye Cumhuriyetinde en fazla 180 gün süreyle ikamet izni alabilirler."
+  },
+  "mainForeingHealthInsuranceItems": {
+    "insuranceTitle": "Yabancı Sağlık Sigortası",
+    "insuranceDescription": "Yabancı sağlık sigortası, yurt dışında seyahat ederken sağlık hizmetlerine erişim sağlamak için önemlidir. Bu sigorta türü, beklenmedik sağlık sorunları veya kazalar durumunda tıbbi masrafları karşılamaya yardımcı olabilir.",
+    "insuranceBenefits": "Yabancı sağlık sigortası sağlayabileceği bazı temel faydalar şunlardır:",
+    "benefit1": "Acil tıbbi yardım",
+    "benefit2": "Tıbbi nakil masrafları",
+    "benefit3": "Hastalık veya kaza sonucu hastanede kalma masrafları",
+    "insuranceCoverage": "Yabancı sağlık sigortası genellikle aşağıdaki konuları kapsar:",
+    "coverage1": "Acil ve beklenmedik sağlık sorunları",
+    "coverage2": "Hastaneye yatışlar",
+    "coverage3": "Ameliyatlar ve tedaviler",
+    "howToGetInsurance": "Yabancı sağlık sigortası nasıl alınır?",
+    "stepsToGetInsurance": "Yabancı sağlık sigortası almak için izlemeniz gereken temel adımlar şunlardır:",
+    "step1": "Güvenilir bir sigorta şirketi seçin.",
+    "step2": "Sigorta planınızı seçin ve başvurun.",
+    "step3": "Sigorta poliçenizi aldıktan sonra, seyahatiniz sırasında acil durumlar için gerekli olan bilgileri ve belgeleri yanınızda bulundurun."
+  },
+  "mainFooterItems": {
+    "contactInfo": {
+      "title": "İletişim bilgileri",
+      "address": "Adres: Pirebi Mahallesi Söylemez Sokak 12/D Meram/KONYA",
+      "phone": "Telefon: +90 507 911 74 83",
+      "email": "E-posta: holatercume@gmail.com"
+    },
+    "aboutInfo": {
+      "title": "Hakkımızda",
+      "description": "Biz, yabancı ikamet izni ve sağlık sigortası konusunda uzmanlaşmış bir firmayız."
+    },
+    "quickLinks": {
+      "title": "Hızlı Erişim",
+      "home": "Ana Sayfa",
+      "services": "Hizmetler",
+      "faq": "SSS",
+      "contact": "İletişim"
+    },
+    "socialMedia": {
+      "title": "Sosyal Medya",
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram"
+    }
+  },
+  "footer": {
+    "allRightsReserved": "Tüm hakları saklıdır.",
+    "privacyPolicy": "Gizlilik Politikası",
+    "termsOfUse": "Kullanım Şartları"
+  },
+  "privacyPolicy": {
+    "lastUpdated": "Son güncelleme tarihi: [01.07.2024]",
+    "title": "Gizlilik Politikası",
+    "intro": "Hola Global olarak, müşteri gizliliğini korumayı taahhüt ediyoruz. Bu gizlilik politikası, Hola Global'in web sitesi üzerinden topladığı bilgileri ve bu bilgilerin nasıl kullanıldığını açıklamaktadır.",
+    "collectedInformation": {
+      "title": "Toplanan Bilgiler",
+      "content": "Web sitemizi ziyaret ettiğinizde veya bizimle etkileşimde bulunduğunuzda, aşağıdaki türde bilgileri toplayabiliriz:",
+      "personalInfo": {
+        "title": "Kişisel Bilgiler",
+        "content": "İsim, e-posta adresi, telefon numarası gibi doğrudan sizi tanımlayan bilgiler."
+      },
+      "cookies": {
+        "title": "Çerezler ve İzleme Teknolojileri",
+        "content": "Web sitesi kullanımı hakkında anonim bilgiler toplamak için kullanılan çerezler ve benzeri teknolojiler."
+      }
+    },
+    "useOfInformation": {
+      "title": "Bilgi Kullanımı",
+      "content": "Topladığımız bilgileri aşağıdaki amaçlarla kullanabiliriz:",
+      "purposes": {
+        "content1": "Sunduğumuz hizmetleri sağlamak ve yönetmek.",
+        "content2": "Web sitesini geliştirmek ve kişiselleştirmek.",
+        "content3": "Sizinle iletişim kurmak, size bilgi göndermek ve pazarlama amaçlı bildirimlerde bulunmak."
+      }
+    },
+    "sharingOfInformation": {
+      "title": "Bilgi Paylaşımı",
+      "content": "Hola Global, topladığı bilgileri yasal zorunluluklar veya işbirliği yaptığı üçüncü taraflarla paylaşabilir. Ancak, müşteri gizliliğini koruma konusundaki taahhütlerimiz çerçevesinde, bu bilgileri asla ticari amaçlarla satmayacak veya kiralamayacaktır."
+    },
+    "security": {
+      "title": "Güvenlik",
+      "content": "Hola Global, toplanan bilgilerin güvenliğini sağlamak için uygun teknik ve organizasyonel önlemleri alır. Ancak, internet üzerinden bilgilerin iletimi veya saklanması her zaman tam güvenlik garantisi sağlamayabilir."
+    },
+    "cookies": {
+      "title": "Çerezler",
+      "content": "Web sitemizi kullanırken çerezleri kabul etmiş sayılırsınız. Daha fazla bilgi edinmek veya çerez tercihlerinizi değiştirmek için [Çerez Politikamızı](/cookies) ziyaret edebilirsiniz."
+    },
+    "changes": {
+      "title": "Değişiklikler",
+      "content": "Bu gizlilik politikası zaman zaman güncellenebilir. Güncellemeler web sitemizde yayımlandıktan sonra yürürlüğe girer. Politikanın en son güncelleme tarihini her zaman belirgin bir şekilde göstereceğiz."
+    },
+    "contact": {
+      "title": "İletişim",
+      "content": "Gizlilik politikamızla ilgili sorularınız veya geri bildiriminiz için lütfen bizimle iletişime geçin."
+    }
+  },
+  "termsOfUse": {
+    "title": "Kullanım Şartları",
+    "lastUpdated": "Son güncelleme tarihi: [Tarih]",
+    "intro": "Hola Global olarak, web sitemizi kullanırken lütfen aşağıdaki kullanım şartlarını dikkatlice okuyunuz ve kabul ediniz.",
+    "sections": {
+      "websiteUsage": {
+        "title": "Web Sitesi Kullanımı",
+        "content": "Web sitemizi kullanarak, bu kullanım şartlarını kabul etmiş olursunuz. Kullanım şartlarına uygun olmayan herhangi bir kullanım yasaktır."
+      },
+      "serviceTerms": {
+        "title": "Hizmet Şartları",
+        "content": "Sunulan hizmetlerimizi kullanırken, ilgili hizmet şartlarına ve politikalarına uymayı kabul etmiş olursunuz."
+      },
+      "disclaimer": {
+        "title": "Sorumluluk Reddi",
+        "content": "Hola Global, web sitesi kullanımı veya sunulan hizmetlerden kaynaklanan herhangi bir kayıp veya zarardan sorumlu değildir."
+      },
+      "changes": {
+        "title": "Değişiklikler",
+        "content": "Bu kullanım şartları zaman zaman güncellenebilir. Güncellemeler web sitemizde yayımlandıktan sonra yürürlüğe girer."
+      },
+      "contact": {
+        "title": "İletişim",
+        "content": "Kullanım şartları ile ilgili sorularınız veya geri bildiriminiz için lütfen bizimle iletişime geçin."
+      }
+    }
+  },
+"languageSelector": {
+    "label": "Dil Seçiniz"
+  
+}
+}

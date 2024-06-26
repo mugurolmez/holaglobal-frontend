@@ -4,10 +4,11 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { navibarStyles } from './styles';
+import { mainNavibarStyles } from './styles';
 import { mainNavbarItems } from './navibarItems';
-import logo from '../../images/logo.png';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -21,7 +22,7 @@ function CustomTabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ bgcolor:'black', p: 3 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -43,39 +44,54 @@ function a11yProps(index) {
 }
 
 const Navibar = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  const items = mainNavbarItems(t);
+
   return (
-    <Box sx={navibarStyles.box}>
-      <Box sx={navibarStyles.logoBox}>
-        <img src={logo} alt="Logo" width={'100%'} />
-      </Box>
-      <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+    <Box sx={mainNavibarStyles.pageBox}>
+      
         <Tabs
           indicatorColor="primary"
           value={value}
           onChange={handleChange}
-          centered
-          sx={navibarStyles.tabs}
+          sx={mainNavibarStyles.tabs}
         >
-          {mainNavbarItems.map((item) => (
+          {items.map((item) => (
             <Tab
+              
               key={item.id}
-              label={item.label}
+              label={
+                <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '100%',
+                  height: '100%',
+                }}
+                >
+             { item.label}
+                  </Box>
+              }
+              
               {...a11yProps(item.id)}
-              sx={{
-                ...navibarStyles.label,
-                display: item.id === 0 ? { xs: 'none', sm: 'block' } : 'block', // Anasayfa tabını xs ekranlarda gizle
+              sx={{    
+                
+                ...mainNavibarStyles.tab,
+                display: item.id === 0 ? { xs: 'none', sm: 'none',md:'none',lg:'block'} : 'block',
+               // Anasayfa tabını xs ekranlarda gizle
               }}
               onClick={() => navigate(item.route)}
             />
           ))}
         </Tabs>
-      </Box>
+      
     </Box>
   );
 };

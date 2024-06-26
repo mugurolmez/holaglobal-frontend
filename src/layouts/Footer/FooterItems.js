@@ -1,31 +1,31 @@
-export const mainFooterItems = {
-    contactInfo: [
-        { text: 'İletişim bilgileri', variant: 'h6' },
-        { text: 'Adres: Örnek Sokak No: 1, İstanbul, Türkiye', variant: 'body2' },
-        { text: 'Telefon: +90 123 456 7890', variant: 'body2' },
-        { text: 'E-posta: info@example.com', variant: 'body2' }
-    ],
+export const mainFooterItems = (t) => {
+    return {
+        contactInfo: [
+            { text: t('mainFooterItems.contactInfo.title'), variant: 'h6' },
+            { text: t('mainFooterItems.contactInfo.address'), variant: 'body2' },
+            { text: t('mainFooterItems.contactInfo.phone'), variant: 'body2' },
+            { text: t('mainFooterItems.contactInfo.email'), variant: 'body2' }
+        ],
 
-    aboutInfo: [
-        { text: 'Hakkımızda', variant: 'h6' },
-        { text: 'Biz, yabancı ikamet izni ve sağlık sigortası konusunda uzmanlaşmış bir firmayız.', variant: 'body2' }
-    ],
+        aboutInfo: [
+            { text: t('mainFooterItems.aboutInfo.title'), variant: 'h6' },
+            { text: t('mainFooterItems.aboutInfo.description'), variant: 'body2' }
+        ],
 
-    // Hızlı Erişim
-    quickLinks: [
-        { text: 'İletişim Hızlı Erişim', variant: 'h6' },
-        { text: 'Ana Sayfa', href: '/' },
-        { text: 'Hizmetler', href: '/services' },
-        { text: 'SSS', href: '/faq' },
-        { text: 'İletişim', href: '/contact' }
-    ],
+        quickLinks: [
+            { text: t('mainFooterItems.quickLinks.title'), variant: 'h6' },
+            { text: t('mainFooterItems.quickLinks.home'), href: '/' },
+            { text: t('mainFooterItems.quickLinks.services'), href: '/' },
+            { text: t('mainFooterItems.quickLinks.faq'), href: '/sss' },
+            { text: t('mainFooterItems.quickLinks.contact'), href: '' }
+        ],
 
-    // Sosyal Medya
-    socialMedia: [
-        { text: 'Sosyal Medya', variant: 'h6' },
-        { text: 'Facebook', href: 'https://facebook.com' },
-        { text: 'Twitter', href: 'https://twitter.com' },
-        { text: 'LinkedIn', href: 'https://linkedin.com' },
-        { text: 'Instagram', href: 'https://instagram.com' }
-    ],
-}
+        socialMedia: [
+            { text: t('mainFooterItems.socialMedia.title'), variant: 'h6' },
+            { text: t('mainFooterItems.socialMedia.facebook'), href: 'https://www.facebook.com/profile.php?id=61552109386767' },
+            { text: t('mainFooterItems.socialMedia.twitter'), href: 'https://twitter.com' },
+            { text: t('mainFooterItems.socialMedia.linkedin'), href: 'https://linkedin.com' },
+            { text: t('mainFooterItems.socialMedia.instagram'), href: 'https://instagram.com/holatercume' }
+        ],
+    };
+};

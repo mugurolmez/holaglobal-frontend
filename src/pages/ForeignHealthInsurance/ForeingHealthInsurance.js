@@ -3,9 +3,12 @@ import { Box, Typography } from '@mui/material';
 import { mainAppStyles } from '../../appStyles';
 import CustomerForm from '../../forms/CustomerForm/CustomerForm';
 import { mainForeingHealthInsuranceItems } from './ForeingHealthInsuranceItems';
+import { useTranslation } from 'react-i18next';
 
 
 const ForeingHealthInsurance = () => {
+  const { t } = useTranslation();
+  const items = mainForeingHealthInsuranceItems(t);
   return (
     <Box
       sx={mainAppStyles.pageBox}
@@ -15,7 +18,7 @@ const ForeingHealthInsurance = () => {
       </Box>
 
       <Box sx={mainAppStyles.pageTextBox}>
-        {mainForeingHealthInsuranceItems.map((item) => (
+        {items.map((item) => (
           <Typography key={item.id} variant={item.variant}>
             {item.text}
           </Typography>

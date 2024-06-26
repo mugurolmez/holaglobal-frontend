@@ -1,23 +1,24 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Button } from '@mui/material';
+import { Button } from '@mui/material';
 import { mainAppStyles } from '../appStyles';
+import { useTranslation } from 'react-i18next';
+
 
 function HealthInsuranceButton() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
+ 
+
   const handleClick = () => {
     navigate('/foreing-health-insurance')
   }
 
   return (
-    <Box sx={mainAppStyles.healthInsuranceButtonBox}>
-
       <Button onClick={handleClick}
-        sx={mainAppStyles.healthInsuranceButtonButton}
-      >Yabancı  Sağlık Sigortası
-      </Button>
-
-    </Box>
+        sx={mainAppStyles.healthInsuranceButton}
+      >{t('mainForeingHealthInsuranceItems.insuranceTitle')}
+      </Button> 
   );
 }
 

@@ -1,24 +1,34 @@
 import React from 'react'
-import logo from '../../images/HOLA1.png'
-import { Box, ImageListItem } from '@mui/material'
-import { Link } from 'react-router-dom'
-import { mainHeaderStyles } from './HeaderSytles'
 
+import { Box, ImageListItem } from '@mui/material'
+import LanguageSelector2 from '../../component/LanguageSelector2'
+import HealthInsuranceButton from '../../component/HealthInsuranceButton'
+import hola from '../../images/HOLA1.png'
+import { mainHeaderStyles } from './HeaderSytles';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-  return (
 
-    <Box sx={mainHeaderStyles.box} >
-      <Link to="/home">
-          <ImageListItem 
-            sx={{
-              width: { xs: '150px', sm: '250px', md: '300px', lg: '350px', xl: '400px' },
-            }}
-          >
-            <img src={logo} alt="Logo" style={{ cursor: 'pointer' }} />
+
+  return (
+    <Box sx={mainHeaderStyles.pageBox} >
+
+      <Box sx={mainHeaderStyles.languageSelectorBox}>
+        <LanguageSelector2 />
+      </Box>
+
+      <Box sx={mainHeaderStyles.holaBox}>
+        <Link to="/home">
+          <ImageListItem >
+            <img src={hola} alt="hola" style={{ cursor: 'pointer' }} />
           </ImageListItem>
-  
-      </Link>
+        </Link>
+      </Box>
+
+      <Box sx={mainHeaderStyles.healthInsuranceBox}>
+        <HealthInsuranceButton />
+      </Box>
+
     </Box>
 
   );

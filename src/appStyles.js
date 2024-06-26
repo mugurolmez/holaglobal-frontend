@@ -1,23 +1,24 @@
 export const mainAppStyles = {
 
     healthInsuranceButtonBox: {
-        position: 'fixed',
+        
         top: '20px',
         right: '20px',
         zIndex: '1000', // Gerekirse, diğer öğelerin önünde olacak şekilde ayarlayabilirsiniz
     },
 
-    healthInsuranceButtonButton: {
+    healthInsuranceButton: {
 
-        height: { xs: '50px', sm: '60px', md: '70px', lg: '80px', xl: '90px' }, // Ekran boyutuna göre özel yükseklik
-        width: { xs: '150px', sm: '200px', md: '250px', lg: '300px', xl: '350px' }, // Ekran boyutuna göre özel genişlik
-        backgroundColor: '#212121',
+        // Ekran boyutuna göre özel yükseklik
+      backgroundColor: '#212121',
         color: 'white',
         fontWeight: 'bold',
         borderRadius: '20px',
         borderColor: 'white', // Beyaz çerçeve rengi
         borderWidth: '2px', // Çerçeve kalınlığı
         borderStyle: 'solid', // Çerçeve stili
+        height: { xs: '60px', sm: '60px',md: '60px', lg: '90px', xl: '90px' },
+        width:'100%'
     },
     whatsAppButtonFloatingIcon: {
 
@@ -31,7 +32,7 @@ export const mainAppStyles = {
     whatsappButtonIcon:{
         
             fontSize: {xs: '75px', sm: '100px', md: '120px', lg: '140px', xl: '170px' },
-    
+        
            color: 'white' ,
            transition: 'background-color 0.3s, color 0.3s', // Geçiş efekti ekledik
            '&:hover': {

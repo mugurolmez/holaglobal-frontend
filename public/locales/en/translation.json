@@ -1,0 +1,285 @@
+{
+  "formTitleInsurance": "Insurance Application Form",
+  "formTitleQuick": "Quick Application Form",
+  "name": "Name",
+  "lastName": "Last Name",
+  "dateOfBirth": "Date of Birth",
+  "passportNumber": "Passport Number",
+  "typeOfResidencePermit": "Type of Residence Permit",
+  "phoneNumber": "Phone Number",
+  "nationality": "Nationality",
+  "submitButton": "Submit Form",
+  "validation": {
+    "nameRequired": "Name is required",
+    "lastNameRequired": "Last name is required",
+    "dateOfBirthRequired": "Date of Birth is required",
+    "dateOfBirthInvalid": "Invalid date format",
+    "passportNumberRequired": "Passport Number is required",
+    "typeOfResidencePermitRequired": "Type of Residence Permit is required",
+    "phoneNumberRequired": "Phone Number is required",
+    "nationalityRequired": "Nationality is required"
+  },
+  "mainHomeTextItems": {
+    "title": "H O L A !",
+    "welcomeMessage": "Welcome to the Residence Permit Center!",
+    "description": "HOLA! is a leading platform that facilitates and accelerates the residence permit acquisition process, providing reliable solutions for foreigners living in Turkey. We are here to make the residence permit acquisition process faster and easier for you.",
+    "servicesTitle": "Our Services:",
+    "serviceDetails": "Residence Permit Applications: We manage all the steps required to start or continue the residence permit acquisition process in Turkey for you. Our professional consultants ensure that your application is completed smoothly. Consultancy Services: You can contact us for information about the residence permit process or special consultancy services. Our expert team is here to offer you the most suitable solution.",
+    "updatesInfo": "Latest Updates: Follow us to keep up with the latest updates and changes in the residence permit process. Visit our site regularly to stay informed about new regulations, procedures, and news.",
+    "whyHolaTitle": "Why Hola Global?",
+    "whyHolaDetails": "Our Experienced Team: At HOLA!, we manage the residence permit process in the best way with our expert consultants. Fast and Reliable Service: We process and finalize your applications quickly, saving you time. Customer Satisfaction: With our customer-oriented approach, we offer solutions tailored to your needs and keep your satisfaction at the highest level.",
+    "finalMessage": "If you need a strong partner by your side in the residence permit acquisition process in Turkey, do not hesitate to contact us. HOLA! is here to ensure that your residence permits are completed in the smoothest and most efficient way!"
+  },
+  "mainNavbarItems": {
+    "homeLabel": "Home",
+    "homeText": "Home",
+    "residencePermitsLabel": "Residence Permits",
+    "residencePermitsText": "Residence Permits",
+    "healthInsuranceLabel": "Foreign Health Insurance",
+    "healthInsuranceText": "Foreign Health Insurance",
+    "contactLabel": "Contact",
+    "contactText": "Contact"
+  },
+  "mainTabItems": {
+    "familyResidencePermit": "Family Residence Permit",
+    "educationResidencePermit": "Education Residence Permit",
+    "touristResidencePermit": "Tourist Residence Permit",
+    "humanitarianResidencePermit": "Humanitarian Residence Permit",
+    "shortTermResidencePermit": "Short Term Residence Permit",
+    "longTermResidencePermit": "Long Term Residence Permit"
+  },
+  "familyResidencePermit": {
+    "title": "Family Residence Permit",
+    "info1": "Foreign nationals who come to the Republic of Turkey and obtain a residence permit can also obtain a residence permit for their first-degree relatives.",
+    "whoCanApply": "Who can apply for a family residence permit?",
+    "spouse": "To the foreign spouse.",
+    "minorChild": "To the minor foreign child of either the spouse or oneself.",
+    "dependentChild": "To the dependent child of either the spouse or oneself.",
+    "info2": "*A student residence permit does not grant the right to a residence permit for any of the student's relatives.",
+    "multipleSpouses": "If a foreign national applying for a family residence permit has multiple spouses, they can apply for a residence permit only for one of their spouses.",
+    "educationRestriction": "With a family residence permit, a foreign child without a student residence permit can receive education only in primary and secondary education institutions until the age of eighteen.",
+    "shortTermPermit": "Under what circumstances can foreign nationals with a family residence permit apply for a short-term residence permit?",
+    "divorce": "In the case of a foreign national married to a Turkish citizen going through divorce proceedings and having resided in Turkey with a family residence permit for at least three years. (If they prove their victimization due to domestic violence with a court decision, the requirement of having resided in Turkey with a family residence permit for three years is waived).",
+    "supporterDeath": "In case of the supporter's death, foreign nationals with a family residence permit attached to them.",
+    "threeYearsStay": "Foreign nationals who have stayed in our country with a family residence permit for at least three years and have reached the age of eighteen.",
+    "requirements": "What are the requirements for a family residence permit?",
+    "healthInsurance": "Valid health insurance covering all family members of the supporter, an income amounting to at least one third of the minimum wage determined by the Republic of Turkey Constitution for each family member, a criminal record indicating that they have not committed a crime against family order within five years, and having resided in Turkey for at least one year with their address registered in the address registration system.",
+    "purposeStatement": "Foreign nationals applying for a family residence permit must declare the purpose of their stay in the Republic of Turkey, demonstrate their intention to live with the supporter applying for the residence permit, and prove that they and their spouses meet the legal age limit (eighteen years and older).",
+    "notApprovedReasons": "Why are family residence permit applications not approved?",
+    "notMetConditions": "If the conditions requested during the application process are not met or cease to exist.",
+    "misuse": "If the permit is used for purposes other than its intended purpose.",
+    "entryBan": "In case of having a deportation or entry ban to the country."
+  },
+  "edicationResidencePermit": {
+    "title": "Edication Residence Permit",
+    "info1": "Foreign nationals who obtain a residence permit in the Republic of Turkey are required to declare the necessary documents for a student residence permit to the relevant Provincial Directorate of Migration Management.",
+    "whoCanApply": "Who can apply for a student residence permit?",
+    "undergraduate": "Foreign nationals who will receive education at the primary and secondary education levels without a family residence permit.",
+    "graduate": "Foreign students who will receive education such as TUS, DUS, and doctoral studies.",
+    "info2": "* Only spouses and children/dependents of foreign nationals with a student residence permit can be granted a family residence permit. No other family members are granted any privileges.",
+    "permitDuration": "In what durations is a student residence permit issued?",
+    "shortTerm": "Foreign nationals whose education period is less than one year are granted a residence permit for the duration of their education.",
+    "longTerm": "Foreign nationals whose education period exceeds one year are granted a residence permit for the duration of their education, and the permits can be extended annually.",
+    "requirements": "What are the requirements for a student residence permit?",
+    "noLegalBarriers": "No legal impediments preventing residence in the Republic of Turkey.",
+    "educationDocuments": "Preparation and declaration of documents showing the education to be received.",
+    "addressDeclaration": "Declaration of the address information to be resided in the Republic of Turkey.",
+    "healthInsurance": "Is health insurance mandatory for a student residence permit?",
+    "insuranceRequirement": "Under the Social Insurance and General Health Insurance Law, foreign nationals who do not apply to become general health insured within three months from the registration date may not be provided with other health insurance. Those who do not become general health insured after the three-month period may be required to obtain private health insurance."
+  },
+  
+    "mainHumanitarianResidencePermitItems": {
+      "title": "Humanitarian Residence Permit",
+      "info1": "Foreign nationals who have entered Turkey legally fleeing internal turmoil or war in their country of residence or who are required to stay in Turkey can be granted a short-term residence permit for up to one year.",
+      "whoCanApply": "Who can apply for a humanitarian residence permit?",
+      "spouse": "Foreign national spouse.",
+      "minorChild": "Minor foreign national child of the spouse or oneself.",
+      "dependentChild": "Dependent child of the spouse or oneself.",
+      "reasons": {
+        "title": "Reasons",
+        "item1": "When it is highly beneficial for the child.",
+        "item2": "When a deportation or entry ban decision has been taken against foreign nationals but they are not deemed suitable to leave the Turkish Republic.",
+        "item3": "During the continuation process of the applicant's return to the initial country of asylum or another safe country.",
+        "item4": "For urgent reasons or for the protection of national interests, public order, and public safety, foreign nationals who need to enter and reside in the Turkish Republic.",
+        "item5": "In extraordinary circumstances.",
+        "item6": "Foreign nationals under humanitarian residence permits and temporary protection status are not granted long-term residence rights. Additionally, foreign nationals holding humanitarian residence permits must register with the address registration system within twenty working days from the date of issuance of the permit."
+      
+    }
+  },
+  
+    "mainLongTermResidencePermitItems": {
+      "title": "What is Long-Term Residence Permit?",
+      "info1": "To obtain a long-term residence permit in Turkey, it is sufficient to have resided continuously in the Turkish Republic for at least 8 (eight) years. Foreign nationals who meet the necessary conditions can obtain a long-term residence permit from the competent authorities in the city or district where they reside.",
+      "conditions": {
+        "title": "Conditions for Long-Term Residence Permit:",
+        "item1": "To have stayed continuously in Turkey for 8 (eight) years.",
+        "item2": "Not to have received social assistance within the last 3 (three) years.",
+        "item3": "To have a source of income that can support oneself and, if applicable, their family.",
+        "item4": "To have valid health insurance from public or private health institutions.",
+        "item5": "To ensure that there are no concerns regarding public order and security."
+      },
+      "calculation": {
+        "title": "Calculation of the 8 (Eight) Year Period:",
+        "description": "As specified in the conditions, the calculation of the eight-year period includes half of the time spent under a student residence permit, with all remaining permits taken full-time to complete the eight-year period."
+      },
+      "cancellation": {
+        "title": "Cancellation of Long-Term Residence Permit:",
+        "reason1": "When staying outside the borders of the Turkish Republic for more than 1 (one) year continuously, except for health, education, or mandatory public service in their country of nationality.",
+        "reason2": "When the foreign national poses a threat to public health, order, or security.",
+        "reapplication": "Can a re-application be made for a rejected long-term residence permit?",
+        "reapplicationDetails": "Foreign nationals whose long-term residence permit application is cancelled/rejected can apply through the appropriate procedures at Turkish Republic consulates abroad or, domestically, at the competent authorities in the city where the foreign national resides. The requirement of continuous 8 (eight) years is not necessary for repeated applications."
+      }
+    },
+    "mainTouristResidencePermitItems": {
+    "title": "Tourist Residence Permit",
+    "info1": "Foreign nationals aiming to stay in the Republic of Turkey for tourist purposes may be required to submit documents to the competent authorities specifying where, when, and for how long they intend to stay.",
+    "info2": "As of 2018, applicants for a tourist residence permit must submit a criminal record certificate and documents showing how they will support themselves during their stay in the Republic of Turkey."
+  },
+  
+    "mainShortTermResidencePermitItems": {
+      "title": "Short-Term Residence Permit",
+      "info1": "Foreign nationals who have entered the Republic of Turkey with a visa or visa exemption document can obtain a short-term residence permit for up to 1 (one) year if they apply and meet the necessary conditions. To obtain a short-term residence permit, they must apply to the Migration and Asylum Offices with a visa or visa exemption document, create an appointment, and prepare the required documents completely until the appointment date.",
+      "whoCanApply": "Who can apply for a short-term residence permit?",
+      "tourism": "Foreign nationals visiting the Republic of Turkey for tourism purposes.",
+      "business": "Foreign nationals who need to be in the Republic of Turkey for business meetings, negotiations, conferences, fairs, or education.",
+      "sportingEvents": "Foreign nationals participating in sports activities in the Republic of Turkey.",
+      "artist": "Foreign nationals participating in artistic or cultural events.",
+      "education": "Foreign nationals entering the Republic of Turkey for short-term education programs.",
+      "info2": "Foreign nationals applying for a short-term residence permit must submit documents such as passport, visa or visa exemption document, residence permit application form, document indicating the place of stay within the borders of the Republic of Turkey, criminal record certificate, and health insurance certificate.",
+      "validityPeriod": "For how long is the short-term residence permit valid?",
+      "singleEntry": "Foreign nationals who have entered with a visa or visa exemption document can obtain a residence permit for a maximum of 90 days in the Republic of Turkey.",
+      "multipleEntry": "Foreign nationals with multiple entry permission who have entered with a visa or visa exemption document can obtain a residence permit for a maximum of 180 days in the Republic of Turkey."
+    
+  },
+
+  "mainForeingHealthInsuranceItems":{
+  "insuranceTitle": "Foreign Health Insurance",
+  "insuranceDescription": "Foreign health insurance is essential for accessing healthcare services while traveling abroad. This type of insurance can help cover medical expenses in case of unexpected health issues or accidents.",
+  "insuranceBenefits": "Some key benefits that foreign health insurance can provide include:",
+  "benefit1": "Emergency medical assistance",
+  "benefit2": "Medical evacuation expenses",
+  "benefit3": "Hospitalization expenses due to illness or accident",
+  "insuranceCoverage": "Foreign health insurance typically covers the following areas:",
+  "coverage1": "Emergency and unexpected health issues",
+  "coverage2": "Hospitalizations",
+  "coverage3": "Surgeries and treatments",
+  "howToGetInsurance": "How to get foreign health insurance?",
+  "stepsToGetInsurance": "Some basic steps to follow to get foreign health insurance include:",
+  "step1": "Choose a reputable insurance company.",
+  "step2": "Select your insurance plan and apply.",
+  "step3": "Once you receive your insurance policy, carry the necessary information and documents for emergencies during your travels."
+},
+
+  "mainFooterItems": {
+      "contactInfo": {
+          "title": "Contact Information",
+          "address": "Address: Example Street No: 1, Istanbul, Turkey",
+          "phone": "Phone: +90 123 456 7890",
+          "email": "Email: info@example.com"
+      },
+      "aboutInfo": {
+          "title": "About Us",
+          "description": "We are a company specialized in foreign residence permits and health insurance."
+      },
+      "quickLinks": {
+          "title": "Quick Access",
+          "home": "Home",
+          "services": "Services",
+          "faq": "FAQ",
+          "contact": "Contact"
+      },
+      "socialMedia": {
+          "title": "Social Media",
+          "facebook": "Facebook",
+          "twitter": "Twitter",
+          "linkedin": "LinkedIn",
+          "instagram": "Instagram"
+      }
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use"
+  },
+  "privacyPolicy": {
+    "lastUpdated": "Last updated: [01.07.2024]",
+    "title": "Privacy Policy",
+    "intro": "At Hola Global, we are committed to protecting customer privacy. This privacy policy outlines how Hola Global collects and uses information gathered through its website.",
+    "collectedInformation": {
+      "title": "Collected Information",
+      "content": "When you visit our website or interact with us, we may collect the following types of information:",
+      "personalInfo": {
+        "title": "Personal Information",
+        "content": "Information that directly identifies you, such as name, email address, phone number."
+      },
+      "cookies": {
+        "title": "Cookies and Tracking Technologies",
+        "content": "Cookies and similar technologies used to gather anonymous information about website usage."
+      }
+    },
+    "useOfInformation": {
+      "title": "Use of Information",
+      "content": "We may use the collected information for the following purposes:",
+      "purposes": [
+        "Providing and managing the services offered.",
+        "Improving and personalizing the website.",
+        "Communicating with you and sending you information and marketing notifications."
+      ]
+    },
+    "sharingOfInformation": {
+      "title": "Sharing of Information",
+      "content": "Hola Global may share collected information with third parties in compliance with legal requirements or for business collaboration purposes. However, we will never sell or rent your information for commercial purposes."
+    },
+    "security": {
+      "title": "Security",
+      "content": "Hola Global implements appropriate technical and organizational measures to ensure the security of collected information. However, transmitting or storing information over the internet may not guarantee full security."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "content": "By using our website, you consent to the use of cookies. For more information or to change your cookie preferences, visit our [Cookie Policy](/cookies)."
+    },
+    "changes": {
+      "title": "Changes",
+      "content": "This privacy policy may be updated periodically. Updates will take effect upon publication on our website. We will always prominently display the policy's last update date."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "For questions or feedback regarding our privacy policy, please contact us"
+    }
+  },
+  "termsOfUse": {
+    "title": "Terms of Use",
+    "lastUpdated": "Last updated: [Date]",
+    "intro": "Please read and agree to the following terms of use carefully when using our website.",
+    "sections": {
+      "websiteUsage": {
+        "title": "Website Usage",
+        "content": "By using our website, you agree to these terms of use. Any use that does not comply with the terms of use is prohibited."
+      },
+      "serviceTerms": {
+        "title": "Service Terms",
+        "content": "By using our provided services, you agree to adhere to the relevant service terms and policies."
+      },
+      "disclaimer": {
+        "title": "Disclaimer of Liability",
+        "content": "Hola Global is not responsible for any loss or damage arising from the use of the website or provided services."
+      },
+      "changes": {
+        "title": "Changes",
+        "content": "These terms of use may be updated periodically. Updates become effective after being published on our website."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "For questions or feedback regarding the terms of use, please contact us."
+      }
+    }
+  },
+ 
+  "languageSelector": {
+    "label": "Language"
+  }
+   
+  
+  
+
+}

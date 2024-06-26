@@ -3,9 +3,14 @@ import React from 'react';
 import CustomerForm from '../../../../forms/CustomerForm/CustomerForm'; // Yol düzeltildi
 import { mainAppStyles } from '../../../../appStyles'; // Yol düzeltildi
 import { mainFamilyResidencePermitItems } from './FamilyResidencePermitItems';
+import { useTranslation } from 'react-i18next';
 
 
 const FamilyResidencePermit = () => {
+  const { t } = useTranslation();
+  const items = mainFamilyResidencePermitItems(t);
+
+
   return (
     <Box
    sx={mainAppStyles.pageBox}
@@ -15,7 +20,7 @@ const FamilyResidencePermit = () => {
     </Box>
 
     <Box sx={mainAppStyles.pageTextBox}>
-    {mainFamilyResidencePermitItems.map((item) => (
+    {items.map((item) => (
           <Typography key={item.id} variant={item.variant}>
             {item.text}
           </Typography>
