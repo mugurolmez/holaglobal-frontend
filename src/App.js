@@ -1,5 +1,5 @@
 import React from 'react';
-import { CssBaseline, ThemeProvider, Box, Container } from '@mui/material';
+import { CssBaseline, ThemeProvider, Box } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { Routes, Route } from 'react-router-dom';
@@ -30,17 +30,18 @@ function App() {
             backgroundColor: '#212121',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between',
-
+            justifyContent: 'center',
+            minHeight: '100vh', // Kutunun tam ekran yüksekliğini kaplamasını sağlar
+        
 
           }}
         >
-          <Container maxWidth='xl'sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }} >
+          <Box maxWidth='xl'sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '0 auto' }} >
             <Box
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
+                justifyContent: 'center',
                 m: 0,
                 p: 0
               }}
@@ -73,7 +74,7 @@ function App() {
 
             </Box>
             <WhatsappButton />
-          </Container>
+          </Box>
         </Box>
       </ThemeProvider>
     </LocalizationProvider>
