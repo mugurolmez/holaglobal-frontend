@@ -1,24 +1,15 @@
 export const mainAppStyles = {
 
-    healthInsuranceButtonBox: {
-        
-        top: '20px',
-        right: '20px',
-        zIndex: '1000', // Gerekirse, diğer öğelerin önünde olacak şekilde ayarlayabilirsiniz
-    },
-
     healthInsuranceButton: {
-
-        // Ekran boyutuna göre özel yükseklik
-      backgroundColor: '#212121',
+        backgroundColor: '#212121',
         color: 'white',
         fontWeight: 'bold',
         borderRadius: '20px',
         borderColor: 'white', // Beyaz çerçeve rengi
         borderWidth: '2px', // Çerçeve kalınlığı
         borderStyle: 'solid', // Çerçeve stili
-        height: { xs: '60px', sm: '60px',md: '60px', lg: '90px', xl: '90px' },
-        width:'100%'
+        height: { xs: '60px', sm: '60px', md: '60px', lg: '90px', xl: '90px' },
+        width: '100%'
     },
     whatsAppButtonFloatingIcon: {
 
@@ -27,18 +18,18 @@ export const mainAppStyles = {
         '&:hover': {
             backgroundColor: '#FFFFFF', // Hover durumunda arka plan rengini beyaz yap
         },
-        
+
     },
-    whatsappButtonIcon:{
-        
-            fontSize: {xs: '75px', sm: '100px', md: '120px', lg: '140px', xl: '170px' },
-        
-           color: 'white' ,
-           transition: 'background-color 0.3s, color 0.3s', // Geçiş efekti ekledik
-           '&:hover': {
-             color: '#25D366',
-           
-           }
+    whatsappButtonIcon: {
+
+        fontSize: { xs: '75px', sm: '100px', md: '120px', lg: '140px', xl: '170px' },
+
+        color: 'white',
+        transition: 'background-color 0.3s, color 0.3s', // Geçiş efekti ekledik
+        '&:hover': {
+            color: '#25D366',
+
+        }
 
     },
 
@@ -113,5 +104,27 @@ export const mainAppStyles = {
             color: 'black',
             backgroundColor: 'black'
         }
-    }
+    },
+    contactBox: {
+        backgroundColor: 'white',
+        display: 'flex',
+        alignItems: 'left',
+        justifyContent: 'left',
+        flexDirection: 'row',
+        height:'100%',
+        m:1
+        
+
+    },
+    contactBox2: {
+        backgroundColor: 'white',
+        display: 'flex',
+        alignItems: 'left',
+        justifyContent: 'left',
+        flexDirection: 'column',
+        height:'100%',
+        m:1
+        
+
+    },
 };

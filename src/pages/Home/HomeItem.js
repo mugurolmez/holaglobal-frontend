@@ -33,7 +33,7 @@ export const mainHomeTextItems = (t) => {
       {
         id: 6,
         text: t('mainHomeTextItems.whyHolaTitle'),
-        variant: 'h3'
+        variant: 'h5'
       },
       {
         id: 7,

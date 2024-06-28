@@ -6,7 +6,7 @@ export const mainHeaderStyles = {
       alignItems: '',
       m:2,
       flexDirection: { xs: 'column', sm: 'row' },
-      minHeight:'10vh'
+      minHeight:'10vh',
    },
    holaBox: {
       position: { xs: 'relative', sm: 'absolute' },

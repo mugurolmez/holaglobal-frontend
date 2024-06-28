@@ -3,7 +3,7 @@ export const mainNavibarStyles = {
     display:'flex',
     m:1, 
     justifyContent:'center',
-     backgroundColor:'red',
+     backgroundColor:'#e94e1b',
       alignContent:'center',
        textAlign:'center',
    
