@@ -93,17 +93,17 @@ export const mainAppStyles = {
 
     },
     datePicker: {
-        backgroundColor: 'white',
+        borderColor:'white',
         color: 'black', // Metin rengi
         width: '100%',
         marginBottom: '2%',
         '& .MuiSvgIcon-root': {
             color: '#e94e1b', // İkon rengi
         },
-        layout: {
-            color: 'black',
-            backgroundColor: 'black'
-        }
+        '.MuiOutlinedInput-root': {
+      backgroundColor: 'white',
+    },
+       
     },
     contactBox: {
         backgroundColor: 'white',

@@ -5,6 +5,7 @@ import { mainHomeTextItems } from './HomeItem';
 import CustomerForm from '../../forms/CustomerForm/CustomerForm';
 import { useTranslation } from 'react-i18next';
 
+
 const Home = () => {
   const { t } = useTranslation();
   const items = mainHomeTextItems(t);
@@ -13,6 +14,7 @@ const Home = () => {
     <Box sx={mainAppStyles.pageBox}>
       <Box sx={mainAppStyles.pageFormBox}>
         <CustomerForm />
+       
       </Box>
 
       <Box sx={mainAppStyles.pageTextBox}>

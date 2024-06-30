@@ -527,26 +527,27 @@
       "content": "Pirebi Mahallesi Söylemez Sokak 12/D Meram/KONYA"
     }
   },
-  "services": [
-    {
+  "services": {
+    "mainTitle": "Hizmetler",
+   "1": {
       "title": "Tercüme Hizmetleri",
-      "description": "Hola Global, çok dilli tercüme hizmetleri sunar. Uzman tercümanlarımız, dil engellerini aşmanıza yardımcı olur ve küresel pazarda iletişiminizi güçlendirir."
+      "content": "Hola Global, çok dilli tercüme hizmetleri sunar. Uzman tercümanlarımız, dil engellerini aşmanıza yardımcı olur ve küresel pazarda iletişiminizi güçlendirir."
     },
-    {
+   "2": {
       "title": "Yabancı Dil Destek",
-      "description": "Yabancı dilde iletişim ihtiyaçlarınız için Hola Global, profesyonel çeviri ve dil destek hizmetleri sunar. İş toplantılarından resmi yazışmalara kadar her türlü ihtiyacınıza çözüm sunuyoruz."
+      "content": "Yabancı dilde iletişim ihtiyaçlarınız için Hola Global, profesyonel çeviri ve dil destek hizmetleri sunar. İş toplantılarından resmi yazışmalara kadar her türlü ihtiyacınıza çözüm sunuyoruz."
     },
-    {
+    "3":{
       "title": "Yabancı İkamet Danışmanlığı",
-      "description": "Hola Global, yabancı ülkelerde ikamet etmek isteyenler için kapsamlı danışmanlık hizmetleri sunar. İkamet izin başvurularınızın yönetimini üstlenir ve sürecin her aşamasında destek sağlar."
+      "content": "Hola Global, yabancı ülkelerde ikamet etmek isteyenler için kapsamlı danışmanlık hizmetleri sunar. İkamet izin başvurularınızın yönetimini üstlenir ve sürecin her aşamasında destek sağlar."
     },
-    {
+    "4":{
       "title": "Vize Başvuru Hizmetleri",
-      "description": "Hola Global, vize başvurularınızın sorunsuz bir şekilde yönetilmesini sağlar. Uzman ekibimiz, vize gereksinimlerinizi anlar ve başvuru sürecinde sizin adınıza işlemleri takip eder."
+      "content": "Hola Global, vize başvurularınızın sorunsuz bir şekilde yönetilmesini sağlar. Uzman ekibimiz, vize gereksinimlerinizi anlar ve başvuru sürecinde sizin adınıza işlemleri takip eder."
     },
-    {
+    "5":{
       "title": "Küresel Hukuk Danışmanlığı",
-      "description": "Hola Global, uluslararası hukuk alanında uzmanlaşmış danışmanlık hizmetleri sunar. Yabancı ülkelerdeki yasal gereklilikleri anlamanıza yardımcı olur ve hukuki süreçlerinizde doğru adımları atmanıza destek sağlar."
+      "content": "Hola Global, uluslararası hukuk alanında uzmanlaşmış danışmanlık hizmetleri sunar. Yabancı ülkelerdeki yasal gereklilikleri anlamanıza yardımcı olur ve hukuki süreçlerinizde doğru adımları atmanıza destek sağlar."
     }
-  ]
+  }
 }

@@ -15,7 +15,7 @@ export const mainFooterItems = (t) => {
         quickLinks: [
             { text: t('mainFooterItems.quickLinks.title'), variant: 'h6' },
             { text: t('mainFooterItems.quickLinks.home'), href: '/' },
-            { text: t('mainFooterItems.quickLinks.services'), href: '/' },
+            { text: t('mainFooterItems.quickLinks.services'), href: '/services' },
             { text: t('mainFooterItems.quickLinks.faq'), href: '/faq' },
             { text: t('mainFooterItems.quickLinks.contact'), href: '/contact' }
         ],

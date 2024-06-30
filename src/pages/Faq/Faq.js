@@ -17,11 +17,13 @@ const Faq = () => {
                 </Typography>
             {items.map((item) => (
 
-                <Accordion key={item.id} sx={{ backgroundColor: '#e94e1b', color: 'white', maxWidth: 'xl' }}>
+                <Accordion key={item.id} sx={
+                   { border: '1px solid white', backgroundColor: '#212121', color: '#e94e1b', maxWidth: 'xl',m:'1'}}
+                   >
 
 
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}   >
-                        <Typography sx={{ fontWeight: 'bold', color:'white' }}>
+                    <AccordionSummary sx={{m:1}} expandIcon={<ExpandMoreIcon sx={{color:'red'}} />}   >
+                        <Typography sx={{  fontWeight: 'bold', color:'#e94e1b' }}>
 
                             {item.title}
                         </Typography>
@@ -29,7 +31,10 @@ const Faq = () => {
                     </AccordionSummary>
 
                     <AccordionDetails>
-                        {item.content}
+                        <Typography sx={{  fontWeight: 'bold', color:'white' }}>
+                              {item.content}
+                        </Typography>
+                      
                     </AccordionDetails>
 
                 </Accordion>

@@ -16,6 +16,7 @@ import Contact from './pages/Contact/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse/TermsOfUse';
 import Faq from './pages/Faq/Faq';
+import Services from './pages/Services/Services';
 
 function App() {
 
@@ -73,6 +74,7 @@ function App() {
                   <Route path="/home" element={<Home />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/privacy" element={<PrivacyPolicy />} />
+                  <Route path="/services" element={<Services />} />
                   <Route path="/terms" element={<TermsOfUse />} />
                   <Route path="/faq" element={<Faq />} />
                   <Route path="/foreing-health-insurance" element={<ForeingHealthInsurance />} />
