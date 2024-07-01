@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ErrorMessage, Field } from 'formik';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import dayjs from 'dayjs';
 import 'dayjs/locale/tr';
+import 'dayjs/locale/en';
+import 'dayjs/locale/ru';
 import { mainAppStyles } from '../../appStyles';
 import { Box } from '@mui/material';
 import TextError from './TextError';
+import { useTranslation } from 'react-i18next';
 
 
-dayjs.locale('tr');
-//hata mesajı goruntuleme sorunu araştırılacak
+
 function MuiDatePicker(props) {
+const { t } = useTranslation();
     const { label, name, ...rest } = props;
+    
+   useEffect(()=>{
+dayjs.locale(t('adapterLocale'));
+console.log(t('adapterLocale'))
+
+   },[t])
+
     return (
 
         <Box>
@@ -23,24 +33,29 @@ function MuiDatePicker(props) {
                     const { value } = field;
                     
                     return (
-                        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="tr">
+                        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale= {t('adapterLocale')}>
                             <DatePicker
                                 sx={mainAppStyles.datePicker}
                                 label={label}
                                 id={name}
+                                helperText={<ErrorMessage name={name} component={TextError} />}
                                 {...rest}
                                 value={value ? dayjs(value) : null}
                                 onChange={(val) => {
                                     setFieldValue(name, val ? val.format('YYYY-MM-DD') : null);
                                 }}
+                                
                             />
                         </LocalizationProvider>
                     );
                 }}
             </Field>
-            <ErrorMessage name={name} component={TextError}  ></ErrorMessage>
+        
+      
         </Box>
-    );
+
+        
+    );   
 }
 
 export default MuiDatePicker;

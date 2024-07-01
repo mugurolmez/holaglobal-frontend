@@ -31,7 +31,7 @@ function App() {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            minHeight: '100vh',
+            minHeight: '100%',
             minWidth: '100%', // Kutunun tam ekran genişliğini kaplamasını sağlar
             padding: 0,
             margin: 0,

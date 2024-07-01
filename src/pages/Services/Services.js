@@ -3,7 +3,6 @@ import { Box, Typography } from '@mui/material';
 import { mainServicesItems } from './ServicesItems';
 import { useTranslation } from 'react-i18next';
 import { mainAppStyles } from '../../appStyles';
-import { DatePicker } from '@mui/x-date-pickers';
 const Services = () => {
     const { t } = useTranslation();
     const items = mainServicesItems(t);
@@ -25,18 +24,6 @@ const Services = () => {
             ))
 
             }
-
-             
-                <DatePicker   sx={{
-    '.MuiOutlinedInput-root': {
-      backgroundColor: 'white',
-    },
-  }} />
-           
-
-
-
-
         </Box>
     )
 }

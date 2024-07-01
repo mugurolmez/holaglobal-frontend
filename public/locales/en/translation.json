@@ -1,4 +1,4 @@
-{
+{"adapterLocale":"en",
   "formTitleInsurance": "Insurance Application Form",
   "formTitleQuick": "Quick Application Form",
   "name": "Name",
@@ -525,6 +525,29 @@
     "address": {
       "title": "Address",
       "content": "Pirebi Neighborhood, Söylemez Street 12/D Meram/KONYA"
+    }
+  },
+  "services": {
+    "mainTitle": "Services",
+    "1": {
+      "title": "Translation Services",
+      "content": "Hola Global offers multilingual translation services. Our expert translators help you overcome language barriers and strengthen your communication in the global market."
+    },
+    "2": {
+      "title": "Foreign Language Support",
+      "content": "Hola Global provides professional translation and language support services for your foreign language communication needs. We offer solutions for all your needs, from business meetings to official correspondence."
+    },
+    "3": {
+      "title": "Foreign Residence Consultancy",
+      "content": "Hola Global offers comprehensive consultancy services for those who want to reside in foreign countries. We manage your residence permit applications and provide support at every stage of the process."
+    },
+    "4": {
+      "title": "Visa Application Services",
+      "content": "Hola Global ensures the smooth management of your visa applications. Our expert team understands your visa requirements and follows up on the processes on your behalf during the application process."
+    },
+    "5": {
+      "title": "Global Legal Consultancy",
+      "content": "Hola Global offers specialized consultancy services in the field of international law. We help you understand the legal requirements in foreign countries and support you in taking the right steps in your legal processes."
     }
   }
 }

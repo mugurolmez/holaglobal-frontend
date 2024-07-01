@@ -72,7 +72,6 @@ export const mainAppStyles = {
     button: {
         width: '100%',
         height: '70px',
-        marginBottom: '2%',
         color: 'white'
 
     },
@@ -84,11 +83,10 @@ export const mainAppStyles = {
 
     textField: {
         width: '100%',
-        marginBottom: '2%',
+  
     },
     select: {
         width: '100%',
-        marginBottom: '2%',
         backgroundColor: 'white',
 
     },
@@ -96,7 +94,6 @@ export const mainAppStyles = {
         borderColor:'white',
         color: 'black', // Metin rengi
         width: '100%',
-        marginBottom: '2%',
         '& .MuiSvgIcon-root': {
             color: '#e94e1b', // İkon rengi
         },
