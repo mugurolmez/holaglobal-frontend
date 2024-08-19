@@ -2,26 +2,26 @@ import React from 'react';
 import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import TextError from './TextError';
 import { useField } from 'formik';
-import { mainAppStyles } from '../../appStyles';
+
 
 function MuiSelectField({ label, name, options, ...rest }) {
     const [field, meta] = useField(name);
 
     return (
-        <Box sx={mainAppStyles.formItemBox}> 
-
-      
+        <Box > 
         <FormControl fullWidth>
-            <InputLabel sx={{ color: 'black' }} htmlFor={name}>{label}</InputLabel>
+            <InputLabel  htmlFor={name}>{label}</InputLabel>
             <Select
                 {...field}
                 {...rest}
                 id={name}
                 label={label}
                 error={meta.touched && meta.error}
+                sx={{ backgroundColor: 'white' }}
+                
             >
                 {options.map(option => (
-                    <MenuItem sx={{ color: 'black' }} key={option.value} value={option.value}>
+                    <MenuItem sx={{  backgroundColor:'white', color: 'black' }} key={option.value} value={option.value}>
                         {option.value}
                         {option.flag}
                     </MenuItem>

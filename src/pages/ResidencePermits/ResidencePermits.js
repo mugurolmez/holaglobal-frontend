@@ -76,9 +76,8 @@ const TabsList = styled(BaseTabsList)(
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 6px ${
-    theme.palette.mode === 'dark' ? 'rgba(0,0,0, 0.4)' : 'rgba(0,0,0, 0.2)'
-  };
+  box-shadow: 0px 4px 6px ${theme.palette.mode === 'dark' ? 'rgba(0,0,0, 0.4)' : 'rgba(0,0,0, 0.2)'
+    };
 
   @media (max-width: 600px) {
     flex-wrap: wrap;
@@ -90,7 +89,7 @@ const ResidencePermits = () => {
   const { t } = useTranslation();
   const items = mainTabItems(t);
   return (
-    <Box>
+    <Box width={"100%"}>
       <Tabs defaultValue={0}>
         <TabsList>
           {items.map((item) => (

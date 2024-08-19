@@ -1,5 +1,5 @@
 import React from 'react';
-import { CssBaseline, ThemeProvider, Box } from '@mui/material';
+import { CssBaseline, ThemeProvider, Grid } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { Routes, Route } from 'react-router-dom';
@@ -17,77 +17,112 @@ import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse/TermsOfUse';
 import Faq from './pages/Faq/Faq';
 import Services from './pages/Services/Services';
+import Login from './pages/Login/Login';
+import Dashboard from './layouts/Dashboard/Dashboard';
+import backgroundImage from './images/back5.jpeg';
+import Start from './pages/Start/Start';
+import { AdminRoute } from './Services/guard';
 
 function App() {
-
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs} locale={tr}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        
-        <Box
+        <Grid
           sx={{
-            backgroundColor: '#212121',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            minHeight: '100%',
-            minWidth: '100%', // Kutunun tam ekran genişliğini kaplamasını sağlar
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'black',
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            opacity: 0.7,
+            zIndex: -1,
+          }}
+        />
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+          sx={{
+            minHeight: '100vh',
             padding: 0,
             margin: 0,
           }}
         >
-          <Box maxWidth='xl' sx={{ width: '100%', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '0 auto', minHeight: '100vh' }} >
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                m: 0,
-                p: 0,
-                flex: '1 1 auto'
-              }}
-            >
-              <Box
-                sx={{
-                  flex: '0 0 auto', // Yüksekliği sabitler
-                 // Sabit yükseklik
-                  width: '100%', // Genişlik tam ekran genişliğini kaplar
-                }}
-              >
-                <Header />
-              </Box>
-
-              <Navibar />
-              <Box
-                sx={{
-                  flexGrow: 1,
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  margin: 1,
-                  width: '100%', // Genişlik tam ekran genişliğini kaplar
-                }}
-              >
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/home" element={<Home />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/privacy" element={<PrivacyPolicy />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/terms" element={<TermsOfUse />} />
-                  <Route path="/faq" element={<Faq />} />
-                  <Route path="/foreing-health-insurance" element={<ForeingHealthInsurance />} />
-                  <Route path="/residence-permits/*" element={<ResidencePermits />} />
-                </Routes>
-              </Box>
-              <Box>
-                <Footer />
-              </Box>
-            </Box>
-            <WhatsappButton />
-          </Box>
-        </Box>
+          <Routes>
+            <Route path="/dashboard/*" element={<AdminRoute element={<Dashboard />} />} />
+            <Route
+              path="/*"
+              element={
+                <Grid
+                  container
+                  direction="column"
+                  justifyContent="center"
+                  alignItems="center"
+                  sx={{
+                    maxWidth: { sm: '600px', md: '900px', lg: '1200px', xl: '1536px' },
+                    width: '100%',
+                    flexGrow: 1,
+                    margin: '0 auto',
+                    minHeight: '100vh',
+                  }}
+                >
+                  <Grid
+                    container
+                    direction="column"
+                    justifyContent="center"
+                    alignItems="center"
+                    sx={{
+                      flexGrow: 1,
+                      width: '100%',
+                    }}
+                  >
+                    <Grid item sx={{ width: '100%', mt: 1 }}>
+                      <Header />
+                    </Grid>
+                    <Grid item sx={{ width: '100%' }}>
+                      <Navibar />
+                    </Grid>
+                    <Grid
+                      item
+                      container
+                      justifyContent="center"
+                      alignItems="center"
+                      sx={{
+                        flexGrow: 1,
+                        width: '100%',
+                        mt: 1,
+                      }}
+                    >
+                      <Routes>
+                        <Route path="/" element={<Start />} />
+                        <Route path="/home" element={<Home />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/privacy" element={<PrivacyPolicy />} />
+                        <Route path="/services" element={<Services />} />
+                        <Route path="/terms" element={<TermsOfUse />} />
+                        <Route path="/faq" element={<Faq />} />
+                        <Route path="/foreing-health-insurance" element={<ForeingHealthInsurance />} />
+                        <Route path="/residence-permits/*" element={<ResidencePermits />} />
+                      </Routes>
+                    </Grid>
+                    <Grid item sx={{ width: '100%' }}>
+                      <Footer />
+                    </Grid>
+                  </Grid>
+                  <WhatsappButton />
+                </Grid>
+              }
+            />
+          </Routes>
+        </Grid>
       </ThemeProvider>
     </LocalizationProvider>
   );

@@ -8,7 +8,7 @@ const Footer = () => {
   const items = mainFooterItems(t);
   
   return (
-    <Box component="footer" py={4} color="white" >
+    <Box component="footer"  m={1} py={4} sx={{backgroundColor:'#212121'}} >
       <Container>
         <Grid container spacing={4}>
           {Object.values(items).map((section, sectionIndex) => (

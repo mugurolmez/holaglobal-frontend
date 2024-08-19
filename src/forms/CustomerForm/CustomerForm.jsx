@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { Box, Button, Typography } from '@mui/material';
@@ -7,12 +7,17 @@ import { useMainCustomerFormItems } from './CustomerFormItem';
 import { mainAppStyles } from '../../appStyles';
 import FormikControl from '../../component/formik/FormikControl';
 import { useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addCustomer } from '../../store/thunks/customerThunk';
 
 
 
 const CustomerForm = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const [submitError, setSubmitError] = useState(null);
   const location = useLocation();
+
   const formTitle = location.pathname.includes('foreing-health-insurance')
     ? t('formTitleInsurance')
     : t('formTitleQuick');
@@ -31,9 +36,16 @@ const CustomerForm = () => {
     return acc;
   }, {});
 
-  const onSubmit = values => {
-    console.log('Form data', values);
-  };
+  const onSubmit = async (values, { setSubmitting, resetForm }) => {
+    setSubmitError(null);  // Önceki hatayı sıfırla
+    try {
+        await dispatch(addCustomer(values));
+        resetForm();
+    } catch (error) {
+        setSubmitError(error.message || 'Müşteri Ekleme Hatası');
+    }
+    setSubmitting(false);
+};
 
   return (
     <Box sx={mainAppStyles.formBox}>
@@ -56,6 +68,9 @@ const CustomerForm = () => {
                   options={item.options}
                 />
               ))}
+               {submitError && (
+                              <Typography color="error">{submitError}</Typography>
+                          )}
               <Button sx={mainAppStyles.button} type="submit" disabled={!formik.isValid}>
                 {t('submitButton')}
               </Button>

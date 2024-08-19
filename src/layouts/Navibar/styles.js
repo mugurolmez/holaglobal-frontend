@@ -1,11 +1,11 @@
 export const mainNavibarStyles = {
    pageBox: {
     display:'flex',
-    m:1, 
     justifyContent:'center',
      backgroundColor:'#e94e1b',
       alignContent:'center',
        textAlign:'center',
+    
    
     },
 
