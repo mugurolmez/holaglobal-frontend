@@ -39,12 +39,14 @@ export default function customerReducer(state = initialState, action) {
                 ...state,
                 error: action.payload
             }
-        case UPDATE_CUSTOMER_SUCCESS:
-            return {
-                ...state,
-                customerItem: action.payload,
-                error: null
-            }
+            case UPDATE_CUSTOMER_SUCCESS:
+                return {
+                    ...state,
+                    customerItems: state.customerItems.map(item =>
+                        item.id === action.payload.id ? action.payload : item
+                    ),
+                    error: null
+                };
         case UPDATE_CUSTOMER_ERROR:
             return {
                 ...state,

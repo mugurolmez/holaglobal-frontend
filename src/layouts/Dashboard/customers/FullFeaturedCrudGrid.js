@@ -13,11 +13,12 @@ import {
   GridActionsCellItem,
   GridRowEditStopReasons,
 } from '@mui/x-data-grid';
-import { randomId } from '@mui/x-data-grid-generator';
+  import { randomId } from '@mui/x-data-grid-generator';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCustomer, deleteCustomer, getAllCustomer, updateCustomer } from '../../../store/thunks/customerThunk';
 import * as Yup from 'yup';
 import { Alert, Snackbar } from '@mui/material';
+import dayjs from 'dayjs';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
@@ -31,6 +32,74 @@ const validationSchema = Yup.object().shape({
   state: Yup.string().required('State is required'),
 });
 
+// Helper Functions
+const formatDateForBackend = (date) => date ? dayjs(date).format('YYYY-MM-DD') : null;
+const formatDateForGrid = (date) => date ? dayjs(date).toDate() : null;
+
+const setSnackbar = (setSnackbarMessage, setSnackbarSeverity, setSnackbarOpen, message, severity) => {
+  setSnackbarMessage(message);
+  setSnackbarSeverity(severity);
+  setSnackbarOpen(true);
+};
+
+const validateRow = async (row) => {
+  try {
+    await validationSchema.validate(row, { abortEarly: false });
+  } catch (error) {
+    const validationErrors = error.inner.reduce((acc, curr) => {
+      acc[curr.path] = curr.message;
+      return acc;
+    }, {});
+    return validationErrors;
+  }
+  return null;
+};
+
+const processRowUpdate = async (newRow, dispatch, setRows, setSnackbarMessage, setSnackbarSeverity, setSnackbarOpen) => {
+  if (!newRow.id) {
+    setSnackbar(setSnackbarMessage, setSnackbarSeverity, setSnackbarOpen, 'Güncellenmeye çalışılan satırda geçerli bir id yok.', 'error');
+    return null;
+  }
+
+  const formattedRow = {
+    ...newRow,
+    dateOfBirth: formatDateForBackend(newRow.dateOfBirth),
+    applicationDate: formatDateForBackend(newRow.applicationDate),
+  };
+
+  const validationErrors = await validateRow(formattedRow);
+  if (validationErrors) {
+    setSnackbar(setSnackbarMessage, setSnackbarSeverity, setSnackbarOpen, 'Lütfen formu kontrol edin: ' + JSON.stringify(validationErrors), 'error');
+    return null;
+  }
+
+  const hasCustomerId = !!formattedRow.customerId;
+
+  try {
+    const action = hasCustomerId ? updateCustomer : addCustomer;
+    const result = await dispatch(action(formattedRow));
+
+    if (result.response && result.response.success) {
+      const updatedRow = {
+        ...formattedRow,
+        dateOfBirth: formatDateForGrid(newRow.dateOfBirth),
+        applicationDate: formatDateForGrid(newRow.applicationDate),
+        isNew: false
+      };
+      setRows((prevRows) => prevRows.map((row) => (row.id === newRow.id ? updatedRow : row)));
+      setSnackbar(setSnackbarMessage, setSnackbarSeverity, setSnackbarOpen, result.response.message, 'success');
+      return updatedRow;
+    } else {
+      const errorMessage = result.response?.message || 'Bir hata oluştu.';
+      setSnackbar(setSnackbarMessage, setSnackbarSeverity, setSnackbarOpen, errorMessage, 'error');
+      return null;
+    }
+  } catch (error) {
+    setSnackbar(setSnackbarMessage, setSnackbarSeverity, setSnackbarOpen, 'Bir hata oluştu. Lütfen tekrar deneyin.', 'error');
+    return null;
+  }
+};
+
 function EditToolbar(props) {
   const { setRows, setRowModesModel } = props;
 
@@ -42,14 +111,14 @@ function EditToolbar(props) {
       customerId: '',
       name: '',
       lastname: '',
-      dateOfBirth: '',
+      dateOfBirth: new Date(dayjs().format('YYYY-MM-DD')),
       passportNumber: '',
       typeOfResidencePermit: '',
       phoneNumber: '',
       nationality: '',
-      applicationDate: '',
+      applicationDate: new Date(dayjs().format('YYYY-MM-DD')),
       healthInsuranceNumber: '',
-      state: '',
+      state: 'Beklemede',
       isNew: true
     }]);
     setRowModesModel((oldModel) => ({
@@ -73,21 +142,25 @@ export default function FullFeaturedCrudGrid() {
   const [snackbarOpen, setSnackbarOpen] = React.useState(false);
   const [snackbarMessage, setSnackbarMessage] = React.useState('');
   const [snackbarSeverity, setSnackbarSeverity] = React.useState('error');
+  const [rows, setRows] = React.useState([]);
+  const [rowModesModel, setRowModesModel] = React.useState({});
 
   React.useEffect(() => {
-    dispatch(getAllCustomer()); // Veriyi yükle
+    dispatch(getAllCustomer());
   }, [dispatch]);
 
   React.useEffect(() => {
     if (Array.isArray(customers)) {
-      setRows(customers.map(customer => ({ ...customer, id: customer.customerId }))); // Redux'tan gelen veriyi rows'a ata
+      setRows(customers.map(customer => ({
+        ...customer,
+        id: customer.customerId,
+        dateOfBirth: customer.dateOfBirth ? new Date(customer.dateOfBirth) : null,
+        applicationDate: customer.applicationDate ? new Date(customer.applicationDate) : null,
+      })));
     } else {
       console.error('Customers data is not an array:', customers);
     }
   }, [customers]);
-
-  const [rows, setRows] = React.useState([]);
-  const [rowModesModel, setRowModesModel] = React.useState({});
 
   const handleRowEditStop = (params, event) => {
     if (params.reason === GridRowEditStopReasons.rowFocusOut) {
@@ -103,19 +176,13 @@ export default function FullFeaturedCrudGrid() {
     setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
   };
 
-
   const handleDeleteClick = (id) => async () => {
     const result = await dispatch(deleteCustomer(id));
     if (result?.response?.success) {
       setRows(rows.filter((row) => row.id !== id));
-      setSnackbarMessage(result.response.message); // Mesajı ayarla
-      setSnackbarSeverity('success'); // Başarı mesajı
-      setSnackbarOpen(true);
+      setSnackbar(setSnackbarMessage, setSnackbarSeverity, setSnackbarOpen, result.response.message, 'success');
     } else {
-      console.error('Error deleting customer:', result.response?.message);
-      setSnackbarMessage(result.response.message); // Mesajı ayarla
-      setSnackbarSeverity('error'); // Başarı mesajı
-      setSnackbarOpen(true);
+      setSnackbar(setSnackbarMessage, setSnackbarSeverity, setSnackbarOpen, result.response.message, 'error');
     }
   };
 
@@ -131,83 +198,10 @@ export default function FullFeaturedCrudGrid() {
     }
   };
 
-  const processRowUpdate = async (newRow) => {
-    // Validate row data using Yup
-    try {
-      await validationSchema.validate(newRow, { abortEarly: false });
-    } catch (error) {
-      // Handle validation errors
-      const validationErrors = error.inner.reduce((acc, curr) => {
-        acc[curr.path] = curr.message;
-        return acc;
-      }, {});
-
-      if (Object.keys(validationErrors).length > 0) {
-        setSnackbarMessage('Lütfen formu kontrol edin: ' + JSON.stringify(validationErrors));
-        setSnackbarSeverity('error');
-        setSnackbarOpen(true);
-        return null;
-      }
-
-      return null;
-    }
-
-    // Check if the row has a valid id
-    if (!newRow.id) {
-      console.error('Güncellenmeye çalışılan satırda geçerli bir id yok.');
-      setSnackbarMessage('Geçerli bir id bulunamadı. Satır güncellenemedi.'); // Mesajı ayarla
-      setSnackbarSeverity('error'); // Başarı mesajı
-      setSnackbarOpen(true);
-      return null;
-    }
-
-    // Check if the row has a customerId
-    const hasCustomerId = !!newRow.customerId;
-
-    try {
-      let result;
-      if (hasCustomerId) {
-        // Update customer
-        result = await dispatch(updateCustomer(newRow));
-      } else {
-        // Add customer
-        result = await dispatch(addCustomer(newRow));
-      }
-
-      if (result.response && result.response.success) {
-        const updatedRow = { ...newRow, isNew: false };
-        setRows((prevRows) =>
-          prevRows.map((row) => (row.id === newRow.id ? updatedRow : row))
-        );
-        return updatedRow;
-      } else {
-        const errorMessage = result.response?.message || 'Bir hata oluştu.';
-        console.error('API error:', errorMessage);
-        
-
-        if (result.response?.data) {
-          Object.keys(result.response.data).forEach((key) => {
-            console.error(`${key}: ${result.response.data[key]}`);
-          });
-        }
-        setSnackbarMessage(errorMessage); // Mesajı ayarla
-        setSnackbarSeverity('error'); // Başarı mesajı
-        setSnackbarOpen(true);
-        return null;
-      }
-    } catch (error) {
-      console.error('API error:', error);
-      alert('Bir hata oluştu. Lütfen tekrar deneyin.');
-      return null;
-    }
-  }
-
-
-
-
   const handleRowModesModelChange = (newRowModesModel) => {
     setRowModesModel(newRowModesModel);
   };
+
   const handleProcessRowUpdateError = (error) => {
     console.error('Row update error:', error);
   };
@@ -217,12 +211,23 @@ export default function FullFeaturedCrudGrid() {
     { field: 'customerId', headerName: 'Customer ID', width: 180, editable: false },
     { field: 'name', headerName: 'Name', width: 180, editable: true },
     { field: 'lastname', headerName: 'Lastname', width: 180, editable: true },
-    { field: 'dateOfBirth', headerName: 'Date of Birth', type: 'Date', width: 180, editable: true },
+    {
+      field: 'dateOfBirth',
+      headerName: 'Date of Birth',
+      type: 'date',
+      width: 180,
+      editable: true,
+    },
     { field: 'passportNumber', headerName: 'Passport Number', width: 180, editable: true },
     { field: 'typeOfResidencePermit', headerName: 'Residence Permit Type', width: 180, editable: true },
     { field: 'phoneNumber', headerName: 'Phone Number', width: 180, editable: true },
     { field: 'nationality', headerName: 'Nationality', width: 180, editable: true },
-    { field: 'applicationDate', headerName: 'Application Date', type: 'Date', width: 180, editable: true },
+    {
+      field: 'applicationDate',
+      headerName: 'Application Date',
+      type: 'date',
+      width: 180,
+    },
     { field: 'healthInsuranceNumber', headerName: 'Health Insurance Number', width: 180, editable: true },
     {
       field: 'state',
@@ -293,28 +298,30 @@ export default function FullFeaturedCrudGrid() {
         rowModesModel={rowModesModel}
         onRowModesModelChange={handleRowModesModelChange}
         onRowEditStop={handleRowEditStop}
-        processRowUpdate={processRowUpdate}
-        onProcessRowUpdateError={handleProcessRowUpdateError}
         slots={{
           toolbar: EditToolbar,
         }}
         slotProps={{
           toolbar: { setRows, setRowModesModel },
         }}
-      /><Snackbar
-      open={snackbarOpen}
-      autoHideDuration={2000}
-      anchorOrigin={{ vertical: 'top', horizontal: 'center' }} 
-      sx={{ width: '400px' }} 
-      onClose={() => setSnackbarOpen(false)}
-    >
-      <Alert onClose={() => setSnackbarOpen(false)} severity={snackbarSeverity} sx={{ width: '100%' }}>
-        {snackbarMessage}
-      </Alert>
-    </Snackbar>
-    
+
+        processRowUpdate={(newRow) =>
+          processRowUpdate(newRow, dispatch, setRows, setSnackbarMessage, setSnackbarSeverity, setSnackbarOpen)
+        }
+        onProcessRowUpdateError={handleProcessRowUpdateError}
+
+      />
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={2000}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        sx={{ width: '400px' }}
+        onClose={() => setSnackbarOpen(false)}
+      >
+        <Alert onClose={() => setSnackbarOpen(false)} severity={snackbarSeverity} sx={{ width: '100%' }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </Box>
-
   );
-
 }

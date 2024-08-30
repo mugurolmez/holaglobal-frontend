@@ -5,6 +5,8 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import FullFeaturedCrudGrid from './FullFeaturedCrudGrid';
 import DemoTable from './DemoTable';
+import PendingCustomers from './PendingCustomers';
+import MuiDataGridTest from './MuiDataGridTest';
 
 
 
@@ -52,21 +54,27 @@ export default function CustomerTabPanel() {
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="CRUD" {...a11yProps(0)} />
           <Tab label="deneme" {...a11yProps(1)} />
-  
-         
+          <Tab label="Beklemede" {...a11yProps(2)} />
+          <Tab label="MuiDataGrid" {...a11yProps(3)} />
+
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-      <FullFeaturedCrudGrid/>
-   
+        <FullFeaturedCrudGrid />
       </CustomTabPanel>
+
       <CustomTabPanel value={value} index={1}>
-      <DemoTable/>
-   
+        <DemoTable />
       </CustomTabPanel>
-     
-    
-    
+      <CustomTabPanel value={value} index={2}>
+        <PendingCustomers />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={3}>
+        <MuiDataGridTest />
+      </CustomTabPanel>
+
+
+
     </Box>
   );
 }

@@ -20,7 +20,7 @@ export const getAllCustomersError = (error) => ({
 export const addCustomerSuccess = (customer) => ({
     type: ADD_CUSTOMER_SUCCESS,
     payload: customer
-})
+})  
 export const addCustomerError = (error) => ({
     type: ADD_CUSTOMER_ERROR,
     payload: error

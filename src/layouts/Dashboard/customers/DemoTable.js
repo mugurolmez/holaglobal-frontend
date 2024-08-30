@@ -19,8 +19,6 @@ import {
   randomId,
   randomArrayItem,
 } from '@mui/x-data-grid-generator';
-import { useDispatch } from 'react-redux';
-import { addCustomer, updateCustomer } from '../../../store/thunks/customerThunk';
 
 const roles = ['Market', 'Finance', 'Development'];
 const randomRole = () => {
@@ -63,6 +61,165 @@ const initialRows = [
     joinDate: randomCreatedDate(),
     role: randomRole(),
   },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+
+   {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+  {
+    id: randomId(),
+    name: randomTraderName(),
+    age: 23,
+    joinDate: randomCreatedDate(),
+    role: randomRole(),
+  },
+
+
 ];
 
 function EditToolbar(props) {
@@ -70,7 +227,7 @@ function EditToolbar(props) {
 
   const handleClick = () => {
     const id = randomId();
-    setRows((oldRows) => [...oldRows, { id, customerId: '', name: '', age: '', isNew: true }]);
+    setRows((oldRows) => [...oldRows, { id, name: '', age: '', isNew: true }]);
     setRowModesModel((oldModel) => ({
       ...oldModel,
       [id]: { mode: GridRowModes.Edit, fieldToFocus: 'name' },
@@ -87,12 +244,8 @@ function EditToolbar(props) {
 }
 
 export default function DemoTable() {
-
-  const dispatch = useDispatch()
   const [rows, setRows] = React.useState(initialRows);
   const [rowModesModel, setRowModesModel] = React.useState({});
-
-
 
   const handleRowEditStop = (params, event) => {
     if (params.reason === GridRowEditStopReasons.rowFocusOut) {
@@ -124,34 +277,10 @@ export default function DemoTable() {
     }
   };
 
-  const processRowUpdate = async (newRow) => {
-    const hasCustomerId = !!newRow.customerId;
-  
-    try {
-      let result;
-      if (hasCustomerId) {
-        // `updateCustomer` işlemini başlat
-        result = await dispatch(updateCustomer(newRow));
-      } else {
-        // `addCustomer` işlemini başlat
-        result = await dispatch(addCustomer(newRow));
-      }
-  
-      // Sonuç kontrolü ve güncelleme
-      if (result.response.success) {
-        const updatedRow = { ...newRow, isNew: false };
-        setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
-        return updatedRow;
-      } else {
-        console.log(result.response.message);
-        // Hata durumunda gerekli işlemleri yapabilirsiniz
-        return null;
-      }
-    } catch (error) {
-      console.error("Bir hata oluştu:", error);
-      // Hata durumunda gerekli işlemleri yapabilirsiniz
-      return null;
-    }
+  const processRowUpdate = (newRow) => {
+    const updatedRow = { ...newRow, isNew: false };
+    setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
+    return updatedRow;
   };
 
   const handleRowModesModelChange = (newRowModesModel) => {
@@ -159,8 +288,7 @@ export default function DemoTable() {
   };
 
   const columns = [
-    { field: 'id', headerName: 'id', width: 180, editable: true },
-    { field: 'customerId', headerName: 'customerId', width: 180, editable: true },
+    { field: 'id', headerName: 'ID  ', width: 180, editable: true },
     { field: 'name', headerName: 'Name', width: 180, editable: true },
     {
       field: 'age',

@@ -42,7 +42,7 @@ console.log(t('adapterLocale'))
                                 {...rest}
                                 value={value ? dayjs(value) : null}
                                 onChange={(val) => {
-                                    setFieldValue(name, val ? val.format('YYYY-MM-DD') : null);
+                                    setFieldValue(name, val ? val.format('DD-MM-YYYY') : null);
                                 }}
                                 
                             />

@@ -60,20 +60,18 @@ export default class ApiService {
         })
         return response.data
     }
-    static async addCustomer(formData) {
-       try{
 
-     const result = await axios.post(`${this.BASE_URL}/customers/add`, formData, {
-            headers: {
-                ...this.getHeader(),
-                'Content-Type': 'application/json'
-            }  
+
+
+    // Yeni müşteri ekler
+    static async addCustomer(customerData) {
+        return axios.post(`${this.BASE_URL}/customers/add`, customerData, {
+            headers: this.getHeader()
         });
-        return result.data;
-     }catch (error) {
-        throw error;
     }
-    }
+
+
+    
     static async updateCustomer(customer) {
         try{
  
