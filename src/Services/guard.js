@@ -25,3 +25,4 @@ export const AdminRoute = ({ element: Component }) => {
     <Navigate to="/login" replace state={{ from: location }} />
   );
 };
+

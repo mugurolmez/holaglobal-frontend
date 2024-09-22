@@ -20,44 +20,45 @@ export default function customerReducer(state = initialState, action) {
                 customerItems: action.payload,
                 error: null
             }
-
-
         case GET_ALL_CUSTOMERS_ERROR:
             return {
                 ...state,
                 error: action.payload
             }
-            case ADD_CUSTOMER_SUCCESS:
-                return {
-                    ...state,
-                    customerItems: [...state.customerItems, action.payload],
-                    error: null
-                };
+
+
+        case ADD_CUSTOMER_SUCCESS:
+            return {
+                ...state,
+                customerItems: [...state.customerItems, action.payload],
+                error: null
+            };
+
 
         case ADD_CUSTOMER_ERROR:
             return {
                 ...state,
                 error: action.payload
             }
-            case UPDATE_CUSTOMER_SUCCESS:
-                return {
-                    ...state,
-                    customerItems: state.customerItems.map(item =>
-                        item.id === action.payload.id ? action.payload : item
-                    ),
-                    error: null
-                };
+        case UPDATE_CUSTOMER_SUCCESS:
+            return {
+                ...state,
+                customerItems: state.customerItems.map(item =>
+                    item.id === action.payload.id ? action.payload : item
+                ),
+                error: null
+            };
         case UPDATE_CUSTOMER_ERROR:
             return {
                 ...state,
                 error: action.payload
             }
-            case DELETE_CUSTOMER_SUCCESS:
-                return {
-                    ...state,
-                    customerItems: state.customerItems.filter((item) => item.id !== action.payload),
-                    error: null
-                };
+        case DELETE_CUSTOMER_SUCCESS:
+            return {
+                ...state,
+                customerItems: state.customerItems.filter((item) => item.id !== action.payload),
+                error: null
+            };
 
 
         case DELETE_CUSTOMER_ERROR:

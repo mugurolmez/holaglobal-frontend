@@ -11,8 +11,10 @@ function Input(props) {
         <label htmlFor={name}>{label}</label>
         <Field id={name} name={name} {...rest}></Field>
         <ErrorMessage component={TextError} name={name}/>
+       
     </div>
+  
   )
+  
 }
-
 export default Input

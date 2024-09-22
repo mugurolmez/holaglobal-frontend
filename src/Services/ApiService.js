@@ -16,15 +16,26 @@ export default class ApiService {
 
     /* This  register a new user */
     static async registerUser(registration) {
-        const response = await axios.post(`${this.BASE_URL}/register`, registration)
-        return response.data
+        try {
+            const response = await axios.post(`${this.BASE_URL}/auth/register`, registration);
+            return response.data;
+        } catch (error) {
+            console.error('API çağrı hatası:', error);
+            throw error;
+        }
     }
 
     /* This  login a registered user */
     static async loginUser(loginDetails) {
-        const response = await axios.post(`${this.BASE_URL}/auth/login`, loginDetails)
-        return response.data
+        try {
+            const response = await axios.post(`${this.BASE_URL}/auth/login`, loginDetails);
+            return response.data;
+        } catch (error) {
+            console.error('API çağrı hatası:', error.response ? error.response.data : error.message);
+            throw error;
+        }
     }
+    
 
     /***USERS */
     /*  This is  to get the user profile */
@@ -34,7 +45,17 @@ export default class ApiService {
         })
         return response.data
     }
-  
+
+
+    static async deleteUser(userId) {
+        const response = await axios.delete(`${this.BASE_URL}/users/delete-by-id/${userId}`, {
+            headers: this.getHeader()
+        });
+        return response.data;
+    };
+
+
+
 
     static async getUserProfile() {
         const response = await axios.get(`${this.BASE_URL}/users/get-logged-in-profile-info`, {
@@ -53,40 +74,56 @@ export default class ApiService {
     }
 
 
-     /*Customers */
+    /*Customers */
     static async getAllCustomers() {
         const response = await axios.get(`${this.BASE_URL}/customers/all`, {
             headers: this.getHeader()
         })
         return response.data
     }
-
-
-
-    // Yeni müşteri ekler
-    static async addCustomer(customerData) {
-        return axios.post(`${this.BASE_URL}/customers/add`, customerData, {
-            headers: this.getHeader()
+    /* Customers state */
+    static async getAllCustomerByState(state) {
+        const response = await axios.get(`${this.BASE_URL}/customers/getAllCustomerByState/${state}`, {
+            headers: this.getHeader(),  // Authentication veya diğer gerekli başlıkları ekle
         });
+        return response.data;
+    }
+
+    static async updateUser(user) {
+            const response = await axios.put(`${this.BASE_URL}/users/update`, user, {
+                headers: this.getHeader()
+        })
+        return response.data;
     }
 
 
-    
+    static async addCustomer(customerData) {
+        try {
+            const response = await axios.post(`${this.BASE_URL}/customers/add`, customerData);
+            return response.data;  // response.data, API'den gelen yanıt verisini içerir.
+        } catch (error) {
+            console.error('API çağrı hatası:', error);
+            throw error;  // Hata durumunda hatayı yakala
+        }
+    }
+
+
+
     static async updateCustomer(customer) {
-        try{
- 
-      const result = await axios.put(`${this.BASE_URL}/customers/update`, customer, {
-             headers: {
-                 ...this.getHeader(),
-                 'Content-Type': 'application/json'
-             }  
-         });
-         return result.data;
-      }catch (error) {
-         throw error;
-     }
-     }
-    
+        try {
+
+            const result = await axios.put(`${this.BASE_URL}/customers/update`, customer, {
+                headers: {
+                    ...this.getHeader(),
+                    'Content-Type': 'application/json'
+                }
+            });
+            return result.data;
+        } catch (error) {
+            throw error;
+        }
+    }
+
     static async deleteCustomer(id) {
         const result = await axios.delete(`${this.BASE_URL}/customers/delete/${id}`, {
             headers: this.getHeader()
@@ -123,7 +160,7 @@ export default class ApiService {
 
 
 
-  
+
 
     /**AUTHENTICATION CHECKER */
     static logout() {
@@ -139,6 +176,10 @@ export default class ApiService {
     static isAdmin() {
         const role = localStorage.getItem('role')
         return role === 'ADMIN'
+    }
+    static isManager() {
+        const role = localStorage.getItem('role')
+        return role === 'MANAGER'
     }
 
     static isUser() {

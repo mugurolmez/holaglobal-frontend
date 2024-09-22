@@ -18,7 +18,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import dayjs from 'dayjs';
 
-import { baseColumns,baseValidationSchema,baseDispatchers,pendingCustomersState } from './CustomerItemsHelper';
+import { baseColumns,baseValidationSchema,baseDispatchers, approvedCustomersState } from './CustomerItemsHelper';
 import { showSnackbar } from '../../../store/actions/snackbarActions';
 import AddCustomerModal from '../../../component/AddCustomerModal';
 
@@ -40,14 +40,14 @@ function EditToolbar({ openModal }) {
   );
 }
 
-export default function PendingCustomers() {
+export default function ApprovedCustomers() {
   const [rows, setRows] = React.useState([]);
   const [rowModesModel, setRowModesModel] = React.useState({});
   const [open, setOpen] = React.useState(false);
   const [snackbar, setSnackbar] = React.useState({ open: false, message: '', severity: 'error' });
   
   const dispatch = useDispatch();
-  const items = useSelector(pendingCustomersState);
+  const items = useSelector(approvedCustomersState);
 
   const showSnackbarMessage = (message, severity = 'error') => {
     dispatch(showSnackbar(message, severity));

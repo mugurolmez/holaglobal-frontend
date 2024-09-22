@@ -17,11 +17,9 @@ function MuiSelectField({ label, name, options, ...rest }) {
                 id={name}
                 label={label}
                 error={meta.touched && meta.error}
-                sx={{ backgroundColor: 'white' }}
-                
             >
                 {options.map(option => (
-                    <MenuItem sx={{  backgroundColor:'white', color: 'black' }} key={option.value} value={option.value}>
+                    <MenuItem key={option.value} value={option.value}>
                         {option.value}
                         {option.flag}
                     </MenuItem>

@@ -1,4 +1,5 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
+import { height } from "@mui/system";
 
 export const theme = createTheme({
     palette: {
@@ -11,14 +12,94 @@ export const theme = createTheme({
             main: '#673ab7',
         },
     },
+
+
     components: {
+      MuiDataGrid: {
+        styleOverrides: {
+          root: {
+            border: 'none',
+            
+            // DataGrid border'ı kaldır
+            '& .MuiDataGrid-cell': {
+              color: 'black', // Hücre metin rengini değiştir
+              
+            },
+            '& .MuiDataGrid-cell--editing': {
+            backgroundColor: '#000', // Düzenleme modundaki hücrelerin arka plan rengini siyah yap
+            color: '#fff', // Düzenleme modundaki hücrelerin metin rengini beyaz yap
+          },
+            '& .MuiDataGrid-columnHeaders': {
+              backgroundColor: '#f5f5f5', // Kolon başlıklarının arka plan rengini değiştir
+              color: '#000', // Kolon başlık metin rengini değiştir
+              fontSize: '16px', // Kolon başlıklarının font büyüklüğünü değiştir
+            },
+            '& .MuiDataGrid-footerContainer': {
+              backgroundColor: '#f5f5f5', // Footer arka plan rengini değiştir
+            },
+            '.customInput .MuiInputBase-input': {
+              color: 'black', // Metin rengini siyah yapar
+              backgroundColor: 'white', // Arka plan rengini beyaz yapar
+            },
+          },
+        },
+      },
+    
+
+        MuiMenuItem: {
+            styleOverrides: {
+              root: {
+                backgroundColor: 'white', // Arka plan rengi
+                color: 'black', // Metin rengi
+                '&:hover': {
+                  backgroundColor: '#f0f0f0', // Hover durumu için arka plan rengi
+                },
+              },
+            },
+          },
+        
+        // Diğer tema ayarları
+            MuiOutlinedInput: {
+                styleOverrides: {
+                  root: {
+                    backgroundColor: 'white', // Input arka plan rengi
+                  },
+                },
+              },
+              MuiSvgIcon: {
+                styleOverrides: {
+                  root: {
+                    color: '#e94e1b', // İkon rengi
+                  },
+                },
+              },
+          
+              MuiInputBase: {
+                styleOverrides: {
+                  input: {
+                    color: 'black', // Metin rengini siyah yapar
+                    backgroundColor: 'white', // Arka plan rengini beyaz yapar
+                  },
+                },
+              },
+            
+            
+
+        typography: {
+            // Tipografi ayarları
+        },
+
         MuiInputLabel: {
             styleOverrides: {
                 root: {
+                    width: '100%',
                     color: 'black', // Label rengi
+                 
                 },
             },
         },
+
+
         MuiSelect: {
             styleOverrides: {
                 select: {
@@ -26,55 +107,86 @@ export const theme = createTheme({
                     color: 'black',
                     '&:focus': {
                         backgroundColor: 'white',
-                        color: 'black', // Select odaklandığında arka plan rengi
+                        color: 'black',
                     },
                     '&:hover': {
                         backgroundColor: 'white',
-                        color: 'black', // Select üzerine gelindiğinde arka plan rengi
+                        color: 'black',
                     },
                     '& ul': {
-                        backgroundColor: 'white', // Seçeneklerin arka plan rengi
-                        color: 'black', // Seçeneklerin yazı rengi
+                        backgroundColor: 'white',
+                        color: 'black',
                     },
                     '.MuiMenu-paper': {
-                        backgroundColor: 'white', // Seçeneklerin arka plan rengi
-                        color: 'black', //
+                        backgroundColor: 'white',
+                        color: 'black',
                     },
                 },
                 icon: {
-                    color: 'yellow',
+                    color: 'black',
                 },
             },
         },
+
+
         MuiTextField: {
             styleOverrides: {
-                root: {
-                    borderColor: 'red',
-                },
+              root: {
+                // Global TextField root ayarları
+                width: '100%', // Tüm inputlar %100 genişlikte olsun
+                marginBottom: '15px', // Inputlar arasında boşluk
+              },
             },
-        },
+            defaultProps: {
+              // Global InputProps ayarları
+              InputProps: {
+                style: {
+                  backgroundColor: '#f0f0f0', // Global arka plan rengi
+                  color: '#333', // Yazı rengi
+                },
+              },
+              // Label için global ayarlar
+              InputLabelProps: {
+                style: {
+                  color: '#555', // Label rengi
+                },
+              },
+            },
+          },
+        
+
+
         MuiButton: {
             styleOverrides: {
                 root: {
+                    width: '100%',
                     backgroundColor: 'black',
-                    color: '#e94e1b',
+                    color: 'white',
+                    height: '60px',  // Varsayılan yükseklik
+
+                    // Responsive yükseklik ayarı
+                    '@media (max-width:600px)': { // Telefon boyutları için
+                        height: '40px',
+                    },
+                    '@media (min-width:600px) and (max-width:960px)': { // Tablet boyutları için
+                        height: '45px',
+                    },
+                    '@media (min-width:960px)': { // Daha büyük ekranlar için
+                        height: '55px',
+                    },
                     '&:hover': {
                         backgroundColor: 'white',
                         color: 'black',
                     },
                     '&:disabled': {
                         backgroundColor: 'red',
-                        color: 'black',
+                        color: 'white',
                     },
                 },
                 contained: {
                     fontWeight: 'bold',
                     textAlign: 'center',
                     width: '100%',
-                    height: '10vw',
-                    marginTop: '2%',
-                    marginBottom: '2%',
-                    flex: '1',
                 },
             },
         },
@@ -108,5 +220,4 @@ export const theme = createTheme({
             marginBottom: '10px',
         },
     },
-
 });

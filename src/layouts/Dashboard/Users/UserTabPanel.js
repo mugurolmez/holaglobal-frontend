@@ -3,25 +3,26 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import PendingCustomers from './PendingCustomers';
-import ApprovedCustomers from './ApprovedCustomers';
-import CancelledCustomers from './CancelledCustomers';
-import AllCustomers from './AllCustomers';
+import AdminUsers from './AdminUsers';
+
+
+
+
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
     <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box >{children}</Box>}
-    </div>
-  );
+    role="tabpanel"
+    hidden={value !== index}
+    id={`simple-tabpanel-${index}`}
+    aria-labelledby={`simple-tab-${index}`}
+    {...other}
+  >
+    {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+  </div>
+);
 }
 
 CustomTabPanel.propTypes = {
@@ -37,7 +38,7 @@ function a11yProps(index) {
   };
 }
 
-export default function CustomerTabPanel() {
+export default function UserTabPanel() {
   const [value, setValue] = useState(0);
 
 
@@ -49,24 +50,18 @@ export default function CustomerTabPanel() {
     <Box sx={{width: 'calc(98vw - 240px)',minWidth:'500px' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Beklemede" {...a11yProps(0)} />
-          <Tab label="Onaylandı" {...a11yProps(1)} />
-          <Tab label="İptal" {...a11yProps(2)} />
-          <Tab label="Tüm Müşteriler" {...a11yProps(3)} />
+          <Tab label="Admin" {...a11yProps(0)} />
+       
         </Tabs>
       </Box>
+
+
+      <Box >
       <CustomTabPanel value={value} index={0}>
-        <PendingCustomers />
+      <AdminUsers/>
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-        <ApprovedCustomers />
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-        <CancelledCustomers />
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={3}>
-        <AllCustomers />
-      </CustomTabPanel>
+   
+      </Box>
     </Box>
   );
 }

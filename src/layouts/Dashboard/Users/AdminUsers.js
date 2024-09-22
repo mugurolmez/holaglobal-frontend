@@ -16,11 +16,11 @@ import {
   GridRowEditStopReasons,
 } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from 'react-redux';
-import dayjs from 'dayjs';
 
-import { baseColumns,baseValidationSchema,baseDispatchers,pendingCustomersState } from './CustomerItemsHelper';
+import { baseColumns,baseValidationSchema,baseDispatchers,adminUsersState } from './UserItemsHelper';
 import { showSnackbar } from '../../../store/actions/snackbarActions';
-import AddCustomerModal from '../../../component/AddCustomerModal';
+import AddUserModal from '../../../component/AddUserModal';
+
 
 // EditToolbar bileşeni
 function EditToolbar({ openModal }) {
@@ -40,14 +40,14 @@ function EditToolbar({ openModal }) {
   );
 }
 
-export default function PendingCustomers() {
+export default function AdminUsers() {
   const [rows, setRows] = React.useState([]);
   const [rowModesModel, setRowModesModel] = React.useState({});
   const [open, setOpen] = React.useState(false);
   const [snackbar, setSnackbar] = React.useState({ open: false, message: '', severity: 'error' });
   
   const dispatch = useDispatch();
-  const items = useSelector(pendingCustomersState);
+  const items = useSelector(adminUsersState);
 
   const showSnackbarMessage = (message, severity = 'error') => {
     dispatch(showSnackbar(message, severity));
@@ -216,9 +216,7 @@ export default function PendingCustomers() {
       <DataGrid
         rows={items.map(item => ({
           ...item,
-          dateOfBirth: item.dateOfBirth ? dayjs(item.dateOfBirth).toDate() : null,
-          applicationDate: item.applicationDate ? dayjs(item.applicationDate).toDate() : null,
-        }))} // Convert dates to Date objects
+         }))} // Convert dates to Date objects
         columns={columns}
         editMode="row"
         rowModesModel={rowModesModel}
@@ -234,7 +232,7 @@ export default function PendingCustomers() {
           toolbar: { openModal: handleOpenModal }, // Modal'ı açmak için işlevi geçin
         }}
       />
-      <AddCustomerModal open={open} onClose={handleCloseModal} />
+      <AddUserModal open={open} onClose={handleCloseModal} />
       <Snackbar
         open={snackbar.open}
         autoHideDuration={6000}

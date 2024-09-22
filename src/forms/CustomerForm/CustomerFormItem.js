@@ -35,7 +35,7 @@ export const useMainCustomerFormItems = () => {
     },
     {
       id: 2,
-      control: 'datePicker',
+      control: 'muiDatePicker',
       type: 'dateOfBirth',
       label: t('dateOfBirth'),
       name: 'dateOfBirth',
@@ -49,6 +49,15 @@ export const useMainCustomerFormItems = () => {
       name: 'passportNumber',
       validationSchema: Yup.string().required(t('validation.passportNumberRequired'))
     },
+  
+    {
+      id: 5,
+      control: 'muiInput',
+      type: 'phoneNumber',
+      label: t('phoneNumber'),
+      name: 'phoneNumber',
+      validationSchema: Yup.string().required(t('validation.phoneNumberRequired'))
+    },  
     {
       id: 4,
       control: 'muiSelectField',
@@ -57,14 +66,6 @@ export const useMainCustomerFormItems = () => {
       name: 'typeOfResidencePermit',
       options: residencePermitTypeOptions,
       validationSchema: Yup.string().required(t('validation.typeOfResidencePermitRequired'))
-    },
-    {
-      id: 5,
-      control: 'muiInput',
-      type: 'phoneNumber',
-      label: t('phoneNumber'),
-      name: 'phoneNumber',
-      validationSchema: Yup.string().required(t('validation.phoneNumberRequired'))
     },
     {
       id: 6,

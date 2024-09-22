@@ -549,5 +549,9 @@
       "title": "Küresel Hukuk Danışmanlığı",
       "content": "Hola Global, uluslararası hukuk alanında uzmanlaşmış danışmanlık hizmetleri sunar. Yabancı ülkelerdeki yasal gereklilikleri anlamanıza yardımcı olur ve hukuki süreçlerinizde doğru adımları atmanıza destek sağlar."
     }
-  }
+  },
+  "mainStartItems": {
+    "Button1": "İKAMET İZNİ BAŞVURUSU",
+    "Button2": "ÇALIŞMA İZNİ BAŞVURUSU"
+      }
 }

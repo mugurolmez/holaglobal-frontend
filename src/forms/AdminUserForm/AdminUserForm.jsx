@@ -3,28 +3,28 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { Box, Button, ThemeProvider, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { useMainCustomerFormItems } from './AdminCustomerFormItem';
 import { mainAppStyles } from '../../appStyles';
 import FormikControl from '../../component/formik/FormikControl';
 import { useDispatch } from 'react-redux';
-import { addCustomer, getAllCustomer } from '../../store/thunks/customerThunk';
-import SendIcon from '@mui/icons-material/Send';
+import { useMainUserFormItems } from './AdminUserFormItem';
+import { register } from '../../store/thunks/authThunks';
+import { getAllUser } from '../../store/thunks/userThunks';
 import { theme } from '../../component/Theme';
 
 
 
-const AdminCustomerForm = ({ onClose }) => {
+const AdminUserForm = ({ onClose }) => {
     const { t } = useTranslation();
-    const mainCustomerFormItems = useMainCustomerFormItems();
+    const mainUserFormItems = useMainUserFormItems();
     const dispatch = useDispatch();
     const [submitError, setSubmitError] = useState(null);
 
-    const initialValues = mainCustomerFormItems.reduce((acc, item) => {
+    const initialValues = mainUserFormItems.reduce((acc, item) => {
         acc[item.name] = '';
         return acc;
     }, {});
 
-    const validationSchema = mainCustomerFormItems.reduce((acc, item) => {
+    const validationSchema = mainUserFormItems.reduce((acc, item) => {
         acc[item.name] = item.validationSchema;
         return acc;
     }, {});
@@ -32,32 +32,29 @@ const AdminCustomerForm = ({ onClose }) => {
     const onSubmit = async (values, { setSubmitting, resetForm }) => {
         setSubmitError(null);  // Önceki hatayı sıfırla
         try {
-            await dispatch(addCustomer(values));
-            await dispatch(getAllCustomer())
+            await dispatch(register(values));
+            await dispatch(getAllUser())
             resetForm();
             onClose();  // Sadece başarılı ise formu kapat
         } catch (error) {
-            setSubmitError(error.message || 'Müşteri Ekleme Hatası');
+            setSubmitError(error.message || 'Kullanıcı Ekleme Hatası');
         }
         setSubmitting(false);
     };
 
     return (
         <ThemeProvider theme={theme}>
-        <Box sx={mainAppStyles.formBox}>
+        <Box>
             <Formik
                 initialValues={initialValues}
                 validationSchema={Yup.object(validationSchema)}
                 onSubmit={onSubmit}
             >
                 {formik => (
-                    <Box >
-
-                  
-                    <Box >
+                <Box sx={mainAppStyles.formBox}>
                         <Form>
-                            <Typography variant='h5'>Müşteri Ekleme Formu</Typography>
-                            {mainCustomerFormItems.map(item => (
+                            <Typography variant='h5' >Kullanıcı Ekleme Formu</Typography>
+                            {mainUserFormItems.map(item => (
                                 <FormikControl
                                     key={item.id}
                                     control={item.control}
@@ -70,19 +67,11 @@ const AdminCustomerForm = ({ onClose }) => {
                             {submitError && (
                                 <Typography  >{submitError}</Typography>
                             )}
-                            <Button
-                               // variant='contained'
-                              
-                                type="submit"
-                                disabled={!formik.isValid}
-                                endIcon={<SendIcon />}
-                            >
+                            <Button type="submit" disabled={!formik.isValid}>
                                 {t('submitButton')}
                             </Button>
-                          
-
+                    
                         </Form>
-                    </Box>
                     </Box>
                 )}
             </Formik>
@@ -91,4 +80,4 @@ const AdminCustomerForm = ({ onClose }) => {
     );
 };
 
-export default AdminCustomerForm;
+export default AdminUserForm;

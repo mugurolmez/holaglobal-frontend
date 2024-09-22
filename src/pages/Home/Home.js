@@ -13,8 +13,7 @@ const Home = () => {
   return (
     <Box sx={mainAppStyles.pageBox}>
       <Box sx={mainAppStyles.pageFormBox}>
-        <CustomerForm />
-       
+        <CustomerForm />  
       </Box>
 
       <Box sx={mainAppStyles.pageTextBox}>

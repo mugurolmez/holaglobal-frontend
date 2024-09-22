@@ -57,50 +57,20 @@ export const mainAppStyles = {
         padding: 2
 
     },
-
-
     formItemBox: {
         margin: '2px'
     },
-    customerFormTitle: {
-        margin: '1rem 0', // Margin değerini belirleyin
-        fontSize: '1.5rem', // Yazı boyutunu belirleyin
-        fontWeight: 'bold', // Yazı kalınlığını belirleyin
-        color: 'white', // Yazı rengini belirleyin
-        textAlign: 'center'
-    },
+
     button: {
         width: '100%',
         height: '70px',
         color: 'white'
 
     },
-    customerFormBox: {
-        margin: '10px',
-        alignItems: 'center',
-        height: '100%'
-    },
 
     textField: {
         width: '100%',
   
-    },
-    select: {
-        width: '100%',
-        backgroundColor: 'white',
-
-    },
-    datePicker: {
-        borderColor:'white',
-        color: 'black', // Metin rengi
-        width: '100%',
-        '& .MuiSvgIcon-root': {
-            color: '#e94e1b', // İkon rengi
-        },
-        '.MuiOutlinedInput-root': {
-      backgroundColor: 'white',
-    },
-       
     },
     contactBox: {
         backgroundColor: 'white',

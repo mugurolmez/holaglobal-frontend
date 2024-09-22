@@ -3,7 +3,7 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import FormikControl from './FormikControl'
 
-function RegistrationForm () {
+function RegistrationForm() {
   const options = [
     { key: 'Email', value: 'emailmoc' },
     { key: 'Telephone', value: 'telephonemoc' }
@@ -27,8 +27,8 @@ function RegistrationForm () {
     modeOfContact: Yup.string().required('Required'),
     phone: Yup.string().when('modeOfContact', {
       is: 'telephonemoc',
-      then: ()=> Yup.string().required('Required'),
-     
+      then: () => Yup.string().required('Required'),
+
     })
   })
 

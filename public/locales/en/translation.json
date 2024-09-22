@@ -549,5 +549,10 @@
       "title": "Global Legal Consultancy",
       "content": "Hola Global offers specialized consultancy services in the field of international law. We help you understand the legal requirements in foreign countries and support you in taking the right steps in your legal processes."
     }
-  }
+  },
+  "mainStartItems": {
+  "Button1": "RESIDENCE PERMIT APPLICATION",
+  "Button2": "WORK PERMIT APPLICATION"
 }
+
+  }

@@ -7,7 +7,6 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/tr';
 import 'dayjs/locale/en';
 import 'dayjs/locale/ru';
-import { mainAppStyles } from '../../appStyles';
 import { Box } from '@mui/material';
 import TextError from './TextError';
 import { useTranslation } from 'react-i18next';
@@ -35,14 +34,14 @@ console.log(t('adapterLocale'))
                     return (
                         <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale= {t('adapterLocale')}>
                             <DatePicker
-                                sx={mainAppStyles.datePicker}
+                                
                                 label={label}
                                 id={name}
                                 helperText={<ErrorMessage name={name} component={TextError} />}
                                 {...rest}
                                 value={value ? dayjs(value) : null}
                                 onChange={(val) => {
-                                    setFieldValue(name, val ? val.format('DD-MM-YYYY') : null);
+                                    setFieldValue(name, val ? val.format('YYYY-MM-DD') : null);
                                 }}
                                 
                             />

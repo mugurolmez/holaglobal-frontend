@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CssBaseline, ThemeProvider, Grid } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { theme } from './component/Theme';
 import { tr } from 'date-fns/locale';
 import Navibar from './layouts/Navibar/Navibar';
@@ -18,12 +18,24 @@ import TermsOfUse from './pages/TermsOfUse/TermsOfUse';
 import Faq from './pages/Faq/Faq';
 import Services from './pages/Services/Services';
 import Login from './pages/Login/Login';
-import Dashboard from './layouts/Dashboard/Dashboard';
+
 import backgroundImage from './images/back5.jpeg';
 import Start from './pages/Start/Start';
 import { AdminRoute } from './Services/guard';
+import SnackbarComponent from './component/SnackbarComponent';
+
+import { useDispatch } from 'react-redux';
+import { setLocation } from './store/actions/locationActions';
+import Dashboard from './layouts/Dashboard/Dasboard';
 
 function App() {
+  const dispatch = useDispatch();
+  const location = useLocation();
+
+  useEffect(() => {
+    dispatch(setLocation(location));
+  }, [location, dispatch]);
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs} locale={tr}>
       <ThemeProvider theme={theme}>
@@ -33,14 +45,15 @@ function App() {
             position: 'fixed',
             top: 0,
             left: 0,
-            width: '100%',
-            height: '100%',
+            width: '100vw',  // Cihazın genişliğine göre ayarlanır
+            height: '100vh', // Cihazın yüksekliğine göre ayarlanır
+            display: 'flex',
             backgroundColor: 'black',
             backgroundImage: `url(${backgroundImage})`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
-            opacity: 0.7,
+            opacity: 1,
             zIndex: -1,
           }}
         />
@@ -52,16 +65,19 @@ function App() {
           sx={{
             minHeight: '100vh',
             padding: 0,
-            margin: 0,
+           
+             mt: 1
           }}
         >
           <Routes>
             <Route path="/dashboard/*" element={<AdminRoute element={<Dashboard />} />} />
+         
             <Route
               path="/*"
               element={
                 <Grid
                   container
+
                   direction="column"
                   justifyContent="center"
                   alignItems="center"
@@ -69,7 +85,7 @@ function App() {
                     maxWidth: { sm: '600px', md: '900px', lg: '1200px', xl: '1536px' },
                     width: '100%',
                     flexGrow: 1,
-                    margin: '0 auto',
+                    mt: 1,
                     minHeight: '100vh',
                   }}
                 >
@@ -86,7 +102,7 @@ function App() {
                     <Grid item sx={{ width: '100%', mt: 1 }}>
                       <Header />
                     </Grid>
-                    <Grid item sx={{ width: '100%' }}>
+                    <Grid item sx={{ width: '100%', mt: 1 }}>
                       <Navibar />
                     </Grid>
                     <Grid
@@ -123,6 +139,7 @@ function App() {
             />
           </Routes>
         </Grid>
+        <SnackbarComponent />
       </ThemeProvider>
     </LocalizationProvider>
   );

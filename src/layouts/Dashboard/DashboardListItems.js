@@ -4,23 +4,22 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import PeopleIcon from '@mui/icons-material/People';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import GroupsIcon from '@mui/icons-material/Groups';
+import { Link } from 'react-router-dom';
 
 export const mainListItems = (
     <React.Fragment>
-        
-      
-        <ListItemButton>
+        <ListItemButton component={Link} to="/dashboard/customers">
             <ListItemIcon>
                 <PeopleIcon />
             </ListItemIcon>
-            <ListItemText primary="İkamet Başvuruları" />
+            <ListItemText primary="Müşteriler" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton component={Link} to="/dashboard/users">
             <ListItemIcon>
-                <AddCircleOutlineIcon />
+                <GroupsIcon />
             </ListItemIcon>
-            <ListItemText primary="Sigorta Başvuruları" />
+            <ListItemText primary="Kullanıcılar" />
         </ListItemButton>
         
     </React.Fragment>

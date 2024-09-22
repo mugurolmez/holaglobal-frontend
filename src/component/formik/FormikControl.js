@@ -25,7 +25,7 @@ function FormikControl(props) {
             return <RadioButtons {...rest} />
         case 'checkbox':
             return <CheckboxGroup {...rest} />
-        case 'datePicker':
+        case 'muiDatePicker':
             return <MuiDatePicker {...rest} />
         case 'muiInput':
             return <MuiInput {...rest} />

@@ -43,7 +43,7 @@ export const useMainCustomerFormItems = () => {
     },
     {
       id: 2,
-      control: 'datePicker',
+      control: 'muiDatePicker',
       type: 'dateOfBirth',
       label: t('dateOfBirth'),
       name: 'dateOfBirth',
