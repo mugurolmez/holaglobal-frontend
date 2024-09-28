@@ -70,7 +70,7 @@ function App() {
           }}
         >
           <Routes>
-            <Route path="/dashboard/*" element={<AdminRoute element={<Dashboard />} />} />
+            <Route path="/dashboard/" element={<AdminRoute element={<Dashboard />} />} />
          
             <Route
               path="/*"
