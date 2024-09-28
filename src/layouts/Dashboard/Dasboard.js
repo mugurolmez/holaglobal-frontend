@@ -13,12 +13,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-import CustomerTabPanel from './Customers/CustomerTabPanel';
+
 import { Paper } from '@mui/material';
 import { mainListItems } from './DashboardListItems';
 import DashboardAccountMenu from './AccountMenu/AccountMenu';
 import UserTabPanel from './Users/UserTabPanel';
 import { Route, Routes } from 'react-router-dom';
+import CustomerTabPanel from './Customers/CustomerTabPanel';
 
 
 const drawerWidth = 240;
