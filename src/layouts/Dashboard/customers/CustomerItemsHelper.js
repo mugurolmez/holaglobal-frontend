@@ -2,7 +2,6 @@ import * as Yup from 'yup';
 import { addCustomer, deleteCustomer, getAllCustomer, updateCustomer } from '../../../store/thunks/customerThunk';
 // Durum seçenekleri ve izin türü sabitleri
 import { createSelector } from 'reselect';
-import { maxWidth, minWidth, width } from '@mui/system';
 export const stateOptions = ['Beklemede', 'Onaylandı', 'İptal'];
 export const permitOptions = ['Aile İkamet İzni', 'Öğrenci İkamet İzni', 'İnsani İkamet İzni', 'Kısa Dönem İkamet', 'Uzun Dönem İkamet'];
 
