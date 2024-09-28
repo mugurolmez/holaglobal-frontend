@@ -12,14 +12,14 @@ export const mainContactItems = (t) => {
             type:'phone'
         },
         {
-            id:0,
+            id:1,
             title: t(`contact.email.title`),
             content: t(`contact.email.content`),
             icon: <EmailIcon sx={{fontSize: {xs: '60px', sm: '80px',md: '80px', lg: '80px', xl: '80px'} }}/>, // Telefon ikonu
             type:'email'
         },
         {
-            id:0,
+            id:2,
             title: t(`contact.address.title`),
             content: t(`contact.address.content`),
             icon: <HomeIcon  sx={{fontSize: {xs: '80px', sm: '80px',md: '80px', lg: '80px', xl: '80px'} }}/>, // Telefon ikonu

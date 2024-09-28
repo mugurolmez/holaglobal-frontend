@@ -5,12 +5,12 @@ export const mainEdicationResidencePermitItems = (t) => {
 
   return [
     {
-      id: 1,
+      id: 0,
       text: t('edicationResidencePermit.title'),
       variant: 'h3'
     },
     {
-      id: 2,
+      id: 1,
       text: t('edicationResidencePermit.info1'),
       variant: 'body1'
     },
