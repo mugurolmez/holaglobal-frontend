@@ -7,17 +7,17 @@ export const permitOptions = ['Aile İkamet İzni', 'Öğrenci İkamet İzni', '
 
 // Ortak sütunlar
 export const baseColumns = [
-  { field: 'id', headerName: 'ID', editable: false,type:'text', isIdKey: true ,flex:0.5},
-  { field: 'name',headerName: 'Adı', type:'text' ,editable: true ,flex:1},
-  { field: 'lastname', headerName: 'Soyadı',  editable: true ,flex:1},
-  { field: 'dateOfBirth', headerName: 'Doğum Tarihi', type: 'date', editable: true ,flex:1},
-  { field: 'passportNumber', headerName: 'Passport No',  editable: true ,flex:1},
-  { field: 'typeOfResidencePermit', headerName: 'Oturma İzni Türü', type: 'singleSelect', valueOptions: permitOptions, editable: true,flex:1 },
-  { field: 'phoneNumber', headerName: 'GSM', editable: true ,flex:1},
-  { field: 'nationality', headerName: 'Nationality',  editable: true ,flex:1},
-  { field: 'applicationDate', headerName: 'Başvuru Tarihi',  type: 'date', editable: false ,flex:1},
-  { field: 'healthInsuranceNumber', headerName: 'Poliçe No', editable: true ,flex:2},
-  { field: 'state', headerName: 'Durum',  editable: true, type: 'singleSelect', valueOptions: stateOptions ,flex:1},
+  { field: 'id', headerName: 'ID', editable: false,type:'text', isIdKey: true , minWidth: 50},
+  { field: 'name',headerName: 'Adı', type:'text' ,editable: true , minWidth: 100},
+  { field: 'lastname', headerName: 'Soyadı',  editable: true, minWidth: 100},
+  { field: 'dateOfBirth', headerName: 'Doğum Tarihi', type: 'date', editable: true , minWidth: 120},
+  { field: 'passportNumber', headerName: 'Passport No',  editable: true , minWidth: 150},
+  { field: 'typeOfResidencePermit', headerName: 'Oturma İzni Türü', type: 'singleSelect', valueOptions: permitOptions, editable: true, minWidth: 200},
+  { field: 'phoneNumber', headerName: 'GSM', editable: true , minWidth: 200},
+  { field: 'nationality', headerName: 'Nationality',  editable: true , minWidth: 200},
+  { field: 'applicationDate', headerName: 'Başvuru Tarihi',  type: 'date', editable: false , minWidth: 200},
+  { field: 'healthInsuranceNumber', headerName: 'Poliçe No', editable: true , minWidth: 200},
+  { field: 'state', headerName: 'Durum',  editable: true, type: 'singleSelect', valueOptions: stateOptions , minWidth: 200},
   
 ];
 
@@ -28,7 +28,10 @@ export const baseValidationSchema = Yup.object().shape({
   dateOfBirth: Yup.date().required('Date of Birth is required').typeError('Invalid date format'),
   passportNumber: Yup.string().required('Passport Number is required'),
   typeOfResidencePermit: Yup.string().required('Type of Residence Permit is required'),
-  phoneNumber: Yup.string().required('Phone Number is required'),
+  phoneNumber: Yup.string()
+  .required('Phone Number is required')
+  .matches(/^05\d{9}$/, 'Telefon numarası 05xx şeklinde başlamalıdır'),
+
   nationality: Yup.string().required('Nationality is required'),
   healthInsuranceNumber: Yup.string().nullable(),
   state: Yup.string().required('State is required'),

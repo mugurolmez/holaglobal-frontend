@@ -18,15 +18,13 @@ import TermsOfUse from './pages/TermsOfUse/TermsOfUse';
 import Faq from './pages/Faq/Faq';
 import Services from './pages/Services/Services';
 import Login from './pages/Login/Login';
-
 import backgroundImage from './images/back5.jpeg';
 import Start from './pages/Start/Start';
 import { AdminRoute } from './Services/guard';
 import SnackbarComponent from './component/SnackbarComponent';
-
 import { useDispatch } from 'react-redux';
 import { setLocation } from './store/actions/locationActions';
-import Dashboard from './layouts/Dashboard/Dasboard';
+import Dashboard from './layouts/Dashboard/Dashboard';
 
 function App() {
   const dispatch = useDispatch();
@@ -45,8 +43,8 @@ function App() {
             position: 'fixed',
             top: 0,
             left: 0,
-            width: '100vw',  // Cihazın genişliğine göre ayarlanır
-            height: '100vh', // Cihazın yüksekliğine göre ayarlanır
+            width: '100vw',
+            height: '100vh',
             display: 'flex',
             backgroundColor: 'black',
             backgroundImage: `url(${backgroundImage})`,
@@ -57,88 +55,85 @@ function App() {
             zIndex: -1,
           }}
         />
-        <Grid
-          container
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-          sx={{
-            minHeight: '100vh',
-            padding: 0,
-           
-             mt: 1
-          }}
-        >
-          <Routes>
-            <Route path="/dashboard/" element={<AdminRoute element={<Dashboard />} />} />
-         
-            <Route
-              path="/*"
-              element={
+        
+        {/* Ana sayfalar için Routes */}
+        <Routes>
+          <Route
+            path="/*"
+            element={
+              <Grid
+                container
+                direction="column"
+                justifyContent="center"
+                alignItems="center"
+                sx={{
+                  maxWidth: { sm: '600px', md: '900px', lg: '1200px', xl: '1536px' },
+                  mx: 'auto',
+                  width: '100%',
+                  flexGrow: 1,
+                  mt: 1,
+                  minHeight: '100vh',
+                  display: 'flex', // Ekleme
+                  justifyContent: 'center', // Ekleme: Ortalamak için
+                  alignItems: 'center', // Ekleme: Ortalamak için
+
+                }}
+              >
                 <Grid
                   container
-
                   direction="column"
                   justifyContent="center"
                   alignItems="center"
                   sx={{
-                    maxWidth: { sm: '600px', md: '900px', lg: '1200px', xl: '1536px' },
-                    width: '100%',
                     flexGrow: 1,
-                    mt: 1,
-                    minHeight: '100vh',
+                    width: '100%',
+                    
+                    mx:'auto'
                   }}
                 >
+                  <Grid item sx={{ width: '100%', mt: 1 }}>
+                    <Header />
+                  </Grid>
+                  <Grid item sx={{ width: '100%', mt: 1 }}>
+                    <Navibar />
+                  </Grid>
                   <Grid
+                    item
                     container
-                    direction="column"
                     justifyContent="center"
                     alignItems="center"
                     sx={{
                       flexGrow: 1,
                       width: '100%',
+                      mt: 1,
                     }}
                   >
-                    <Grid item sx={{ width: '100%', mt: 1 }}>
-                      <Header />
-                    </Grid>
-                    <Grid item sx={{ width: '100%', mt: 1 }}>
-                      <Navibar />
-                    </Grid>
-                    <Grid
-                      item
-                      container
-                      justifyContent="center"
-                      alignItems="center"
-                      sx={{
-                        flexGrow: 1,
-                        width: '100%',
-                        mt: 1,
-                      }}
-                    >
-                      <Routes>
-                        <Route path="/" element={<Start />} />
-                        <Route path="/home" element={<Home />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/privacy" element={<PrivacyPolicy />} />
-                        <Route path="/services" element={<Services />} />
-                        <Route path="/terms" element={<TermsOfUse />} />
-                        <Route path="/faq" element={<Faq />} />
-                        <Route path="/foreing-health-insurance" element={<ForeingHealthInsurance />} />
-                        <Route path="/residence-permits/*" element={<ResidencePermits />} />
-                      </Routes>
-                    </Grid>
-                    <Grid item sx={{ width: '100%' }}>
-                      <Footer />
-                    </Grid>
+                    <Routes>
+                      <Route path="/" element={<Start />} />
+                      <Route path="/home" element={<Home />} />
+                      <Route path="/login" element={<Login />} />
+                      <Route path="/contact" element={<Contact />} />
+                      <Route path="/privacy" element={<PrivacyPolicy />} />
+                      <Route path="/services" element={<Services />} />
+                      <Route path="/terms" element={<TermsOfUse />} />
+                      <Route path="/faq" element={<Faq />} />
+                      <Route path="/foreing-health-insurance" element={<ForeingHealthInsurance />} />
+                      <Route path="/residence-permits/*" element={<ResidencePermits />} />
+                    </Routes>
                   </Grid>
-                  <WhatsappButton />
+                  <Grid item sx={{ width: '100%' }}>
+                    <Footer />
+                  </Grid>
                 </Grid>
-              }
-            />
-          </Routes>
-        </Grid>
+                <WhatsappButton />
+              </Grid>
+            }
+          />
+          
+          {/* Dashboard için ayrı Route */}
+          <Route path="/dashboard/*" element={<AdminRoute element={<Dashboard />} />} />
+        </Routes>
+
         <SnackbarComponent />
       </ThemeProvider>
     </LocalizationProvider>

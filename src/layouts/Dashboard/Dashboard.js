@@ -104,7 +104,7 @@ export default function Dashboard() {
             sx={[
               {
                 mr: 2,
-                backgroundColor: 'white', // Arka plan rengini turuncu yap
+             
                 color: 'white', // Simgenin rengini beyaz yap
                 '&:hover': {
                   backgroundColor: 'darkorange', // Hover durumunda koyu turuncu yap

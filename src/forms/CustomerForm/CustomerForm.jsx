@@ -21,7 +21,7 @@ const CustomerForm = () => {
     ? t('formTitleInsurance')
     : t('formTitleQuick');
 
-  const mainCustomerFormItems = useMainCustomerFormItems(); 
+  const mainCustomerFormItems = useMainCustomerFormItems();
 
   const initialValues = mainCustomerFormItems.reduce((acc, item) => {
     acc[item.name] = '';
@@ -36,19 +36,18 @@ const CustomerForm = () => {
   const onSubmit = async (values, { setSubmitting, resetForm }) => {
     setSubmitError(null);  // Önceki hatayı sıfırla
     try {
-      console.log(values)
-        await dispatch(addCustomer(values));
-        await dispatch(getAllCustomer())
-      
-        resetForm();
+      await dispatch(addCustomer(values));
+      await dispatch(getAllCustomer())
+
+      resetForm();
     } catch (error) {
-        setSubmitError(error.message || 'Müşteri Ekleme Hatası');
+      setSubmitError(error.message || 'Müşteri Ekleme Hatası');
     }
     setSubmitting(false);
   };
 
   return (
-   
+
     <Box >
       <Formik
         initialValues={initialValues}
@@ -56,7 +55,7 @@ const CustomerForm = () => {
         onSubmit={onSubmit}
       >
         {formik => {
-     
+
           return (
             <Box>
               <Form>
@@ -73,19 +72,28 @@ const CustomerForm = () => {
                 ))}
                 {submitError && (
                   <Typography color="error">{submitError}</Typography>
-               
+
                 )}
-                <Button  type="submit" disabled={!formik.isValid}>
-                  {t('submitButton')}
+
+                <Button type='submit' disabled={formik.isSubmitting}>
+                  {formik.isSubmitting ? (
+
+                    t('sendingButton')
+
+                  ) : (
+                    t('submitButton')
+                  )}
                 </Button>
+
+
               </Form>
             </Box>
           );
-  
+
         }}
       </Formik>
     </Box>
-  
+
   );
 };
 

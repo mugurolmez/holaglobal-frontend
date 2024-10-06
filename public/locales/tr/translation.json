@@ -9,6 +9,7 @@
   "phoneNumber": "Telefon Numarası",
   "nationality": "Milliyet",
   "submitButton": "Formu Gönder",
+  "sendingButton":"Gönderiliyor..",
   "validation": {
     "nameRequired": "Ad gereklidir",
     "lastNameRequired": "Soyad gereklidir",
@@ -17,6 +18,7 @@
     "passportNumberRequired": "Pasaport Numarası gereklidir",
     "typeOfResidencePermitRequired": "Oturma İzni Türü gereklidir",
     "phoneNumberRequired": "Telefon Numarası gereklidir",
+    "phoneNumberFormat":"Telefon numarası 05xx şeklinde başlamalıdır",
     "nationalityRequired": "Milliyet gereklidir"
   },
   "mainHomeTextItems": {
@@ -552,6 +554,6 @@
   },
   "mainStartItems": {
     "Button1": "İKAMET İZNİ BAŞVURUSU",
-    "Button2": "ÇALIŞMA İZNİ BAŞVURUSU"
+    "Button2": "YABANCI SAĞLIK SİGORTASI"
       }
 }

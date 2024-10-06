@@ -16,9 +16,8 @@ export const addCustomer = (customerData) => async (dispatch, getState) => {
     try {
         const response = await ApiService.addCustomer(customerData);
         const currentLocation = getState().location.location; // Mevcut lokasyonu al
-        console.log('currwent location'+JSON.stringify(currentLocation))
         if (response.success) {
-            console.log('success response'+JSON.stringify(response))
+       
             dispatch(addCustomerSuccess(response));
             const successMessage = currentLocation === '/dashboard'
                 ? response.message // Dashboard'da ise gelen mesaj

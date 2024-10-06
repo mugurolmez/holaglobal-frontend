@@ -14,7 +14,7 @@ export const useMainUserFormItems = () => {
       type: 'email',
       label: 'email',
       name: 'email',
-      validationSchema: Yup.string().required('emailRequired')
+      validationSchema: Yup.string().required('email gerekli')
     },
     {
       id: 1,
@@ -22,7 +22,7 @@ export const useMainUserFormItems = () => {
       type: 'name',
       label: 'name',
       name: 'name',
-      validationSchema: Yup.string().required('nameRequired')
+      validationSchema: Yup.string().required('isim gerekli')
     },
     {
       id: 2,
@@ -30,8 +30,10 @@ export const useMainUserFormItems = () => {
       type: 'phoneNumber',
       label: 'phoneNumber',
       name: 'phoneNumber',
-      validationSchema: Yup.string().required('phone number required')
-    },
+      validationSchema: Yup.string()
+      .required('telefon numarası gerekli')
+      .matches(/^05\d{9}$/, 'Telefon numarası formatı 05xx xxx xx xx şeklinde olmalıdır'),
+   },
     {
       id: 3,
       control: 'muiInput',
@@ -49,8 +51,5 @@ export const useMainUserFormItems = () => {
       options: roleOptions,
       validationSchema: Yup.string().required('role required')
     },
-   
-
-
   ];
 };

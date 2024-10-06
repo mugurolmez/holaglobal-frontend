@@ -10,9 +10,7 @@ function MuiCountrySelectField(props) {
 
     useEffect(() => {
         if (selectRef.current) {
-            console.log('Select Props:', selectRef.current.props);
-            console.log('Select Styles:', window.getComputedStyle(selectRef.current));
-        }
+          }
     }, []);
 
     return (

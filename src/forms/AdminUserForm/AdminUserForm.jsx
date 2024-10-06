@@ -44,38 +44,45 @@ const AdminUserForm = ({ onClose }) => {
 
     return (
         <ThemeProvider theme={theme}>
-        <Box>
-            <Formik
-                initialValues={initialValues}
-                validationSchema={Yup.object(validationSchema)}
-                onSubmit={onSubmit}
-            >
-                {formik => (
-                <Box sx={mainAppStyles.formBox}>
-                        <Form>
-                            <Typography variant='h5' >Kullanıcı Ekleme Formu</Typography>
-                            {mainUserFormItems.map(item => (
-                                <FormikControl
-                                    key={item.id}
-                                    control={item.control}
-                                    type={item.type}
-                                    label={t(item.label)}
-                                    name={item.name}
-                                    options={item.options}
-                                />
-                            ))}
-                            {submitError && (
-                                <Typography  >{submitError}</Typography>
-                            )}
-                            <Button type="submit" disabled={!formik.isValid}>
-                                {t('submitButton')}
-                            </Button>
-                    
-                        </Form>
-                    </Box>
-                )}
-            </Formik>
-        </Box>
+            <Box>
+                <Formik
+                    initialValues={initialValues}
+                    validationSchema={Yup.object(validationSchema)}
+                    onSubmit={onSubmit}
+                >
+                    {formik => (
+                        <Box sx={mainAppStyles.formBox}>
+                            <Form>
+                                <Typography variant='h5' >Kullanıcı Ekleme Formu</Typography>
+                                {mainUserFormItems.map(item => (
+                                    <FormikControl
+                                        key={item.id}
+                                        control={item.control}
+                                        type={item.type}
+                                        label={t(item.label)}
+                                        name={item.name}
+                                        options={item.options}
+                                    />
+                                ))}
+                                {submitError && (
+                                    <Typography  >{submitError}</Typography>
+                                )}
+
+                                <Button type='submit' disabled={formik.isSubmitting}>
+                                    {formik.isSubmitting ? (
+
+                                        t('sendingButton')
+
+                                    ) : (
+                                        t('submitButton')
+                                    )}
+                                </Button>
+
+                            </Form>
+                        </Box>
+                    )}
+                </Formik>
+            </Box>
         </ThemeProvider>
     );
 };

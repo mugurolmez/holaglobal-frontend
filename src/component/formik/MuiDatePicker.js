@@ -14,14 +14,13 @@ import { useTranslation } from 'react-i18next';
 
 
 function MuiDatePicker(props) {
-const { t } = useTranslation();
+    const { t } = useTranslation();
     const { label, name, ...rest } = props;
-    
-   useEffect(()=>{
-dayjs.locale(t('adapterLocale'));
-console.log(t('adapterLocale'))
 
-   },[t])
+    useEffect(() => {
+        dayjs.locale(t('adapterLocale'));
+
+    }, [t])
 
     return (
 
@@ -30,11 +29,11 @@ console.log(t('adapterLocale'))
                 {({ field, form }) => {
                     const { setFieldValue } = form;
                     const { value } = field;
-                    
+
                     return (
-                        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale= {t('adapterLocale')}>
+                        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={t('adapterLocale')}>
                             <DatePicker
-                                
+
                                 label={label}
                                 id={name}
                                 helperText={<ErrorMessage name={name} component={TextError} />}
@@ -43,18 +42,16 @@ console.log(t('adapterLocale'))
                                 onChange={(val) => {
                                     setFieldValue(name, val ? val.format('YYYY-MM-DD') : null);
                                 }}
-                                
+
                             />
                         </LocalizationProvider>
                     );
                 }}
             </Field>
-        
-      
-        </Box>
 
-        
-    );   
+
+        </Box>
+    );
 }
 
 export default MuiDatePicker;

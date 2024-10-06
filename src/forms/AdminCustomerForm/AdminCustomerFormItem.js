@@ -72,7 +72,9 @@ export const useMainCustomerFormItems = () => {
       type: 'phoneNumber',
       label: t('phoneNumber'),
       name: 'phoneNumber',
-      validationSchema: Yup.string().required(t('validation.phoneNumberRequired'))
+      validationSchema: Yup.string()
+        .required(t('validation.phoneNumberRequired'))
+        .matches(/^05\d{9}$/, t('validation.phoneNumberFormat')),
     },
     {
       id: 6,

@@ -8,7 +8,6 @@ import { mainAppStyles } from '../../appStyles';
 import FormikControl from '../../component/formik/FormikControl';
 import { useDispatch } from 'react-redux';
 import { addCustomer, getAllCustomer } from '../../store/thunks/customerThunk';
-import SendIcon from '@mui/icons-material/Send';
 import { theme } from '../../component/Theme';
 
 
@@ -44,49 +43,50 @@ const AdminCustomerForm = ({ onClose }) => {
 
     return (
         <ThemeProvider theme={theme}>
-        <Box sx={mainAppStyles.formBox}>
-            <Formik
-                initialValues={initialValues}
-                validationSchema={Yup.object(validationSchema)}
-                onSubmit={onSubmit}
-            >
-                {formik => (
-                    <Box >
+            <Box sx={mainAppStyles.formBox}>
+                <Formik
+                    initialValues={initialValues}
+                    validationSchema={Yup.object(validationSchema)}
+                    onSubmit={onSubmit}
+                >
+                    {formik => (
+                        <Box >
 
-                  
-                    <Box >
-                        <Form>
-                            <Typography variant='h5'>Müşteri Ekleme Formu</Typography>
-                            {mainCustomerFormItems.map(item => (
-                                <FormikControl
-                                    key={item.id}
-                                    control={item.control}
-                                    type={item.type}
-                                    label={t(item.label)}
-                                    name={item.name}
-                                    options={item.options}
-                                />
-                            ))}
-                            {submitError && (
-                                <Typography  >{submitError}</Typography>
-                            )}
-                            <Button
-                               // variant='contained'
-                              
-                                type="submit"
-                                disabled={!formik.isValid}
-                                endIcon={<SendIcon />}
-                            >
-                                {t('submitButton')}
-                            </Button>
-                          
 
-                        </Form>
-                    </Box>
-                    </Box>
-                )}
-            </Formik>
-        </Box>
+                            <Box >
+                                <Form>
+                                    <Typography variant='h5'>Müşteri Ekleme Formu</Typography>
+                                    {mainCustomerFormItems.map(item => (
+                                        <FormikControl
+                                            key={item.id}
+                                            control={item.control}
+                                            type={item.type}
+                                            label={t(item.label)}
+                                            name={item.name}
+                                            options={item.options}
+                                        />
+                                    ))}
+                                    {submitError && (
+                                        <Typography  >{submitError}</Typography>
+                                    )}
+
+                                    <Button type='submit' disabled={formik.isSubmitting}>
+                                        {formik.isSubmitting ? (
+
+                                            t('sendingButton')
+
+                                        ) : (
+                                            t('submitButton')
+                                        )}
+                                    </Button>
+
+
+                                </Form>
+                            </Box>
+                        </Box>
+                    )}
+                </Formik>
+            </Box>
         </ThemeProvider>
     );
 };

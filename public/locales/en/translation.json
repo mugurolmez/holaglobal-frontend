@@ -9,6 +9,7 @@
   "phoneNumber": "Phone Number",
   "nationality": "Nationality",
   "submitButton": "Submit Form",
+  "sendingButton": "Sending...",
   "validation": {
     "nameRequired": "Name is required",
     "lastNameRequired": "Last name is required",
@@ -17,6 +18,7 @@
     "passportNumberRequired": "Passport Number is required",
     "typeOfResidencePermitRequired": "Type of Residence Permit is required",
     "phoneNumberRequired": "Phone Number is required",
+    "phoneNumberFormat": "Phone number should start with 05xx",
     "nationalityRequired": "Nationality is required"
   },
   "mainHomeTextItems": {
@@ -550,9 +552,9 @@
       "content": "Hola Global offers specialized consultancy services in the field of international law. We help you understand the legal requirements in foreign countries and support you in taking the right steps in your legal processes."
     }
   },
-  "mainStartItems": {
+"mainStartItems": {
   "Button1": "RESIDENCE PERMIT APPLICATION",
-  "Button2": "WORK PERMIT APPLICATION"
+  "Button2": "FOREIGN HEALTH INSURANCE"
 }
 
   }

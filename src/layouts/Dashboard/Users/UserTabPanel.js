@@ -47,7 +47,7 @@ export default function UserTabPanel() {
   };
 
   return (
-    <Box sx={{width: 'calc(98vw - 240px)',minWidth:'500px' }}>
+    <Box sx={{minWidth:'500px' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Admin" {...a11yProps(0)} />
